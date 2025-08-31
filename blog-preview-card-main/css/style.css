@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/static/Figtree-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./assets/fonts/static/Figtree-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(47, 88%, 63%);
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+}
+
+::selection {
+  background-color: hsl(47, 88%, 63%);
+}
+
+main {
+  background-color: white;
+  height: 500px;
+  width: 330px;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 8px 8px 0 0 black;
+  padding: 20px 20px 20px 20px;
+}
+
+#illustration {
+  height: 200px;
+  width: 290px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+#category {
+  display: inline-block;
+  background-color: hsl(47, 88%, 63%);
+  padding: 5px 15px 5px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+#category h2 {
+  font-size: 0.7rem;
+}
+
+article h3 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+article h1 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  transition: color 0.2s ease-out;
+}
+
+article h1:hover {
+  cursor: pointer;
+  color: hsl(47, 88%, 63%);
+}
+
+article h1::selection {
+  color:hsl(0, 0%, 7%);
+}
+
+article p {
+  font-size: 0.85rem;
+  color: hsl(0, 0%, 42%);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+#pfp {
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+#author p {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: hsl(0, 0%, 7%);
+}
+
+h1, h2, h3 {
+  color:hsl(0, 0%, 7%);
+  font-weight: 800;
+}
