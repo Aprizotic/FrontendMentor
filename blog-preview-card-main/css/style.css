@@ -75,7 +75,7 @@ article h3 {
 }
 
 article h1 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-bottom: 10px;
   transition: color 0.2s ease-out;
 }
@@ -90,11 +90,12 @@ article h1::selection {
 }
 
 article p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: hsl(0, 0%, 42%);
   font-weight: 500;
   line-height: 1.6;
   margin-bottom: 25px;
+  letter-spacing: 0.2px;
 }
 
 #pfp {
@@ -110,7 +111,7 @@ article p {
   display: inline-block;
   vertical-align: middle;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: hsl(0, 0%, 7%);
 }
 
