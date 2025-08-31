@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+::selection {
+  background-color: hsl(0, 0%, 8%);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(0, 0%, 8%);
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  background-color: hsl(0, 0%, 12%);
+  height: 575px;
+  width: 325px;
+  border-radius: 10px;
+  padding: 25px 25px 25px 25px;
+}
+
+#profile {
+  height: 45%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#pfp {
+  border-radius: 50%;
+  background: linear-gradient(45deg, white, hsl(75, 94%, 57%)); 
+  height: 80px;
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+#name {
+  font-weight: 600;
+  font-size: 1.75rem;
+  padding-bottom: 8px;
+}
+
+#location {
+  color: hsl(75, 94%, 57%, 1);
+  font-weight: 700;
+  font-size: 1rem;
+  padding-bottom: 28px;
+}
+
+#title {
+  font-weight: 400;
+}
+
+nav {
+  height: 55%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 15px;
+}
+
+a {
+  text-decoration: none;
+  background-color: hsl(0, 0%, 20%);
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: hsl(75, 94%, 57%);
+  color:hsl(0, 0%, 12%);
+}
+
+a:hover::selection {
+  background-color: white;
+}
+
+#name, #title, a {
+  color: white;
+}
+
+body, a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
