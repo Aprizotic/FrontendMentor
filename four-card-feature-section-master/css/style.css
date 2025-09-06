@@ -20,9 +20,9 @@
   /* Typography */
   --font-sans: "Poppins", sans-serif;
   --step--1: clamp(0.84rem, 1.5vw, 1rem);
-  --step-1: clamp(0.9rem, 1.5vw, 1.1rem);
+  --step-1: clamp(0.9rem, 1.5vw, 1rem);
   --step-2: clamp(1.1rem, 1.5vw, 1.4rem);
-  --step-3: clamp(1.5rem, 3vw, 2rem);
+  --step-3: clamp(1.5rem, 3vw, 2.5rem);
 
   /* Spacing */
   --space-xs: 0.5rem;
