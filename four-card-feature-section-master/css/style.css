@@ -153,6 +153,7 @@ h2 {
 @media (min-width: 80em) {
   main {
     padding-inline: var(--space-xxl);
+    justify-content: center;
   }
 
   .introduction {
