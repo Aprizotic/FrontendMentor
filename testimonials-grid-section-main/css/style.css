@@ -75,7 +75,7 @@ section {
   background-color: var(--purple-500);
 }
 
-.daniel img {
+.daniel figcaption img {
   border: 2px solid var(--purple-300);
 }
 
@@ -172,12 +172,27 @@ blockquote {
   line-height: 1.4;
 }
 
-img {
+span, p, blockquote, div {
+  z-index: 1;
+}
+
+figcaption img {
   width: 28px;
   height: 28px;
   border-radius: 50%;
   border: 2px solid var(--white);
   background: conic-gradient(var(--shadow), var(--white), var(--shadow), var(--white), var(--shadow));
+}
+
+.quotation {
+  z-index: 0;
+  background: none;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 20%;
+  width: 8em;
+  aspect-ratio: 1 / 1;
+  visibility: hidden;
 }
 
 @media (min-width: 50em) {
@@ -218,6 +233,10 @@ img {
 }
 
 @media (min-width: 75em) {
+  .quotation {
+    visibility: visible;
+  }
+  
   main {
     block-size: 100%;
     display: flex;
