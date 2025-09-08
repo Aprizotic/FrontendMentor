@@ -178,13 +178,13 @@ aside div {
   article {
     display: flex;
     flex-direction: row;
-    block-size: 35%;
+    block-size: auto;
     inline-size: 80%;
     max-inline-size: 70em;
   }
 
   .card-image {
-    height: 100%;
+    height: auto;
     object-position: left;
     width: 21em;
     border-radius: var(--radius-md) 0 0 var(--radius-md);
