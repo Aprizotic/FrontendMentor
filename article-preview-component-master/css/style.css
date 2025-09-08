@@ -1,0 +1,219 @@
+:root {
+  /* Colors */
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --white: hsl(255, 100%, 100%);
+
+  /* Typography */
+  --font-sans: "Manrope", sans-serif;
+
+  /* Gaps */
+  --gap-sm: 0.5rem;
+  --gap-md: 1rem;
+  --gap-lg: 1.5rem;
+  --gap-xl: 2.1rem;
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, main {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--light-grayish-blue);
+  font-size: 13px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  position: relative;
+  height: auto;
+  background-color: var(--white);
+  margin-inline: var(--gap-lg);
+  border-radius: var(--radius-md);
+  box-shadow: 50px 50px 100px 0 var(--grayish-blue);
+}
+
+.card-image {
+  width: 100%;
+  height: 58vw;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: var(--gap-md);
+  padding-inline: var(--gap-xl);
+  padding-block-end: var(--gap-md);
+  padding-block-start: var(--gap-xl);
+}
+
+.title {
+  font-weight: 700;
+  color: var(--dark-grayish-blue);
+  font-size: clamp(1rem, 2vw, 1.7rem);
+  letter-spacing: 0.3px;
+}
+
+.main-text {
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.4px;
+  color: var(--desaturated-dark-blue);
+}
+
+.card-footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: var(--gap-lg);
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+}
+
+.pfp {
+  height: 35px;
+  width: 35px;
+  background: linear-gradient(320deg, var(--dark-grayish-blue), var(--white));
+  border-radius: 50%;
+  margin-inline-end: var(--gap-md);
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--dark-grayish-blue);
+  line-height: 1.6;
+}
+
+time {
+  display: block;
+  font-weight: 500;
+  color: var(--grayish-blue);
+  font-size: 0.85rem;
+}
+
+button {
+  border-radius: 50%;
+  border: none;
+  background-color: var(--light-grayish-blue);
+  width: 35px;
+  height: 35px;
+  transition: background-color 0.2s ease-out;
+  z-index: 1;
+}
+
+button:hover, svg:hover {
+  cursor: pointer;
+}
+
+#share-icon {
+  transition: fill 0.2s ease-out;
+  fill: var(--desaturated-dark-blue);
+}
+
+aside {
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  z-index: 0;
+  opacity: 0;
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  background-color: var(--dark-grayish-blue);
+  transition: opacity 0.2s ease-out;
+  inset-inline: calc(-1 * var(--gap-xl));
+  gap: var(--gap-md);
+  block-size: calc(100% + var(--gap-md) * 2);
+  inset-block-end: calc(-1 * var(--gap-md));
+  padding-inline-start: var(--gap-xl);
+  pointer-events: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+aside span {
+  font-weight: 500;
+  color: var(--grayish-blue);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+}
+
+aside div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 50em) {
+  article {
+    display: flex;
+    flex-direction: row;
+    block-size: 35%;
+    inline-size: 80%;
+    max-inline-size: 70em;
+  }
+
+  .card-image {
+    height: 100%;
+    object-position: left;
+    width: 21em;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+
+  aside {
+    border-radius: var(--radius-sm);
+    padding-inline-end: var(--gap-xl);
+    block-size: auto;
+    padding-block: var(--gap-md);
+    inline-size: fit-content;
+    left: calc(100% - 13.1em);
+    bottom: 7em;
+    box-shadow: 5px 5px 10px 0 var(--grayish-blue);
+  }
+
+  aside::before {
+    z-index: -1;
+    content: "";
+    background-color: var(--dark-grayish-blue);
+    position: absolute;
+    inset-block-end: -5px;
+    width: 30px;
+    height: 30px;
+    inset-inline-start: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .card-footer {
+    position: static;
+  }
+}
