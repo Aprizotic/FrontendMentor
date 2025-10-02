@@ -262,7 +262,7 @@ li:hover {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
     min-block-size: auto;
-    block-size: 60dvb;
+    block-size: 55dvb;
     max-inline-size: 60em;
   }
 
@@ -301,5 +301,9 @@ li:hover {
     justify-content: start;
     gap: var(--gap-xs);
     margin-block-start: var(--gap-lg);
+  }
+
+  .overview {
+    padding: var(--gap-lg);
   }
 }
