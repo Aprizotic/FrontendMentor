@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+
+  <body>
+    <header>
+        <h1>
+          <img src="images/logo.svg" alt="SPLITTER">
+        </h1>
+    </header>
+
+    <main>
+      <section class="input">
+        <div>
+          <h2>Bill</h2>
+          <div class="input-wrapper">
+            <img alt="" class="input-icon" src="images/icon-dollar.svg">
+            <form>
+              <input data-js="bill-input" aria-live="polite" type="number" step="0.01" min="1" placeholder="0" required></input>
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="tip-header">Select Tip %</h2>
+
+          <div class="tip-options">
+            <button class="tip-button">5%</button>
+            <button class="tip-button">10%</button>
+            <button class="tip-button">15%</button>
+            <button class="tip-button">25%</button>
+            <button class="tip-button">50%</button>
+
+            <form class="custom-wrapper">
+              <input data-js="custom-input" type="number" min="1" max="100" step="1" aria-live="polite" class="custom-tip" placeholder="Custom"></input>
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <h2>Number of People</h2>
+          <div class="input-wrapper">
+            <img class="input-icon" alt="" src="images/icon-person.svg">
+            <form>
+              <input data-js="people-input" aria-live="polite" type="number" min="1" placeholder="0" required></input>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="output">
+        <div>
+          <div class="calculated-wrapper">
+            <h2 class="calculated-heading">
+              Tip Amount
+              <span class="person">/ person</span>
+            </h2>
+
+            <span class="amount tip">$0.00</span>
+          </div>
+          
+          <div class="calculated-wrapper">
+            <h2 class="calculated-heading">
+              Total
+              <span class="person">/ person</span>
+            </h2>
+
+            <span class="amount total">$0.00</span>
+          </div>
+        </div>
+
+        <button class="reset invalid">RESET</button>
+      </section>
+    </main>
+  </body>
+</html>
