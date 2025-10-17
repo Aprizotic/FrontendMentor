@@ -1,0 +1,216 @@
+:root {
+  /* Colors */
+  --orange-500: 25 97% 53%;
+  --white: 0 100% 100%;
+  --grey-500: 217 12% 63%;
+  --grey-900: 213 19% 18%;
+  --grey-950: 216 12% 8%;
+
+  /* Gaps and Radius */
+  --gap-sm: 0.5rem;
+  --gap-md: 0.75rem;
+  --gap-lg: 1rem;
+  --gap-xl: 1.5rem;
+  --gap-xxl: 2rem;
+
+  /* Typography */
+  --font-sans: "Overpass", sans-serif; /* Weights: 400, 700 */
+}
+
+@property --percentage {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: var(--font-sans);
+}
+
+html, body {
+  inline-size: 100dvi;
+  min-block-size: 100dvb;
+}
+
+body {
+  background-color: hsl(var(--grey-950));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background: radial-gradient(circle at 50% var(--percentage), hsl(var(--grey-900)), hsl(var(--grey-900) / 0.5));
+  padding: var(--gap-xl);
+  margin: var(--gap-xl);
+  border-radius: var(--gap-lg);
+  position: relative;
+  max-inline-size: 25em;
+  transition: --percentage 1s ease-in-out;
+}
+
+main:has(button:hover) {
+  --percentage: 85%;
+}
+
+.star-icon {
+  background-color: hsl(var(--grey-900));
+  padding: var(--gap-lg);
+  border-radius: 50%;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+}
+
+legend {
+  font-size: 1.5rem;
+  color: hsl(var(--white));
+  font-weight: 700;
+  margin-block: var(--gap-lg);
+}
+
+p {
+  color: hsl(var(--grey-500));
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+button {
+  background-color: hsl(var(--orange-500));
+  border: none;
+  color: hsl(var(--grey-950));
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-block-start: var(--gap-lg);
+  padding-block-end: var(--gap-md);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+button:hover {
+  background-color: hsl(var(--white));
+}
+
+input[type="radio"] {
+  height: 43px;
+  width: 43px;
+}
+
+label::after {
+  content: "";
+  background-color: hsl(var(--grey-900));
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+label.active::after {
+  background-color: hsl(var(--white));
+}
+
+label.active span {
+  color: hsl(var(--grey-950));
+}
+
+label:hover::after{
+  background-color: hsl(var(--orange-500));
+}
+
+label:hover span {
+  color: hsl(var(--grey-900));
+}
+
+label {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  position: absolute;
+  color: hsl(var(--grey-500));
+  font-weight: 700;
+  z-index: 1;
+  inset-block-start: 13.5px;
+  pointer-events: none;
+  transition: color 0.2s ease-out;
+}
+
+section {
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  background: radial-gradient(circle at 50% 5%, hsl(var(--grey-900)), hsl(var(--grey-900) / 0.05));
+  padding: var(--gap-xl);
+  border-radius: var(--gap-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  gap: var(--gap-md);
+  padding-block-start: var(--gap-xxl);
+}
+
+h2 {
+  color: hsl(var(--white));
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+h1 {
+  background-color: hsl(var(--grey-900));
+  padding-inline: var(--gap-lg);
+  padding-block-start: var(--gap-md);
+  padding-block-end: var(--gap-sm);
+  border-radius: 100px;
+  color: hsl(var(--orange-500));
+  font-weight: 700;
+  margin-block-start: var(--gap-sm);
+  margin-block-end: var(--gap-md);
+  font-size: 0.95rem;
+}
+
+.rating-container {
+  all: unset;
+}
+
+form.hidden, .star-icon.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main {
+    background: radial-gradient(circle at 50% 5%, hsl(var(--grey-900)), hsl(var(--grey-900) / 0.5));
+  }
+}
