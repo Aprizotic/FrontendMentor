@@ -1,0 +1,137 @@
+:root {
+  /* Colors */
+  --white: 0 100% 100%;
+  --purple-100: 275 100% 97%;
+  --purple-600: 292 16% 49%;
+  --purple-950: 292 42% 14%;
+  --purple-accent: 281 83 54;
+
+  /* Typography */
+  --fonts-sans: "Work Sans", sans-serif;
+  /* Weights: 400, 600, 700 */
+
+  /* Gaps and Radius */
+  --size-sm: 0.5rem;
+  --size-md: 1rem;
+  --size-lg: 1.5rem;
+  --size-xl: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fonts-sans);
+  font-size: 16px;
+}
+
+html, body {
+  inline-size: 100dvi;
+  min-block-size: 100dvb;
+}
+
+body {
+  background-color: hsl(var(--purple-100));
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  block-size: fit-content;
+  margin-block-start: 9rem;
+  background-color: hsl(var(--white));
+  border-radius: clamp(var(--size-sm), 3vw, var(--size-md));
+  padding: clamp(var(--size-lg), 4vw, var(--size-xl));
+  margin-inline: var(--size-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-lg);
+  max-inline-size: 35em;
+}
+
+main div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-lg);
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: hsl(var(--purple-950));
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: hsl(var(--purple-950));
+  font-weight: 600;
+  transition: color 0.2s ease-out;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(var(--purple-600));
+  opacity: 1;
+  max-height: 400px;
+  transition: max-height 0.4s ease-in-out,
+              opacity 0.4s ease-in-out,
+              margin 0.4s ease-in-out;
+}
+
+.card:hover h2 {
+  color: hsl(var(--purple-accent));
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+hr {
+  border: 1px solid hsl(var(--purple-100));
+}
+
+.background-img {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 15em;
+  z-index: -1;
+}
+
+button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p.hidden {
+  max-height: 0;
+  opacity: 0;
+  margin-block-start: calc(-1 * (var(--size-lg)));
+  padding: 0;
+  pointer-events: none;
+}
+
+.star-img {
+  width: clamp(25px, 3vw, 40px);
+  height: clamp(25px, 3vw, 40px);
+}
+
+:focus-visible {
+  outline: 3px solid hsl(var(--purple-accent));
+  border-radius: 50%;
+  transition: outline-color 0.5s ease-out;
+  box-shadow: 0 0 6px 2px hsl(var(--purple-accent));
+}
