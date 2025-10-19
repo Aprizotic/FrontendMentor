@@ -1,3 +1,30 @@
+/* work-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/static/work-sans-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* work-sans-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/static/work-sans-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* work-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/static/work-sans-v24-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 :root {
   /* Colors */
   --white: 0 100% 100%;
@@ -7,7 +34,7 @@
   --purple-accent: 281 83 54;
 
   /* Typography */
-  --fonts-sans: "Work Sans", sans-serif;
+  --fonts-sans: "Work Sans", system-ui, sans-serif;
   /* Weights: 400, 600, 700 */
 
   /* Gaps and Radius */
@@ -15,6 +42,7 @@
   --size-md: 1rem;
   --size-lg: 1.5rem;
   --size-xl: 2rem;
+  --size-xxl: 3rem;
 }
 
 *,
@@ -40,15 +68,16 @@ body {
 
 main {
   block-size: fit-content;
-  margin-block-start: 9rem;
+  margin-block-start: 10rem;
   background-color: hsl(var(--white));
   border-radius: clamp(var(--size-sm), 3vw, var(--size-md));
-  padding: clamp(var(--size-lg), 4vw, var(--size-xl));
+  padding: clamp(var(--size-lg), 4vw, var(--size-xxl));
   margin-inline: var(--size-lg);
   display: flex;
   flex-direction: column;
   gap: var(--size-lg);
-  max-inline-size: 35em;
+  max-inline-size: 38em;
+  margin-block-end: var(--size-md);
 }
 
 main div {
@@ -78,6 +107,7 @@ h2 {
 
 p {
   font-size: 1rem;
+  line-height: 1.5;
   font-weight: 400;
   color: hsl(var(--purple-600));
   opacity: 1;
@@ -105,7 +135,7 @@ hr {
   inset-inline-start: 0;
   object-fit: cover;
   width: 100%;
-  height: 15em;
+  height: 20em;
   z-index: -1;
 }
 
