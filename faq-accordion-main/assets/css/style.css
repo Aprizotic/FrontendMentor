@@ -81,10 +81,14 @@ main {
   box-shadow: 0 30px 50px 4px hsl(var(--purple-600) / 0.3);
 }
 
-main div {
+main button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+button {
+  all: unset;
 }
 
 header {
@@ -140,13 +144,6 @@ hr {
   z-index: -1;
 }
 
-button {
-  all: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 p.hidden {
   max-height: 0;
   opacity: 0;
@@ -162,7 +159,7 @@ p.hidden {
 
 :focus-visible {
   outline: 3px solid hsl(var(--purple-accent));
-  border-radius: 50%;
+  border-radius: var(--size-sm);
+  outline-offset: 5px;
   transition: outline-color 0.5s ease-out;
-  box-shadow: 0 0 6px 2px hsl(var(--purple-accent));
 }
