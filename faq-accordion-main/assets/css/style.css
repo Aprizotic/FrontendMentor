@@ -78,6 +78,7 @@ main {
   gap: var(--size-lg);
   max-inline-size: 38em;
   margin-block-end: var(--size-md);
+  box-shadow: 0 30px 50px 4px hsl(var(--purple-600) / 0.3);
 }
 
 main div {
