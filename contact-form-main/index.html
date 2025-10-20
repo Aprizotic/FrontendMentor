@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+
+  <body>
+    <main>
+      <form>
+        <fieldset>
+          <legend>Contact Us</legend>
+
+          <label>
+            <div>
+              First Name <span>*</span>
+            </div>
+            <input type="text">
+          </label>
+          This field is required
+
+          <label>
+            <div>
+              Last Name <span>*</span>
+            </div>
+            <input type="text">
+          </label>
+          This field is required
+
+          <label>
+            <div>
+              Email Address <span>*</span>
+            </div>
+            <input type="email">
+          </label>
+          Please enter a valid email address
+          This field is required
+        </fieldset>
+
+        <fieldset>
+          <legend>Query Type <span>*</span></legend>
+        
+          <label>
+            <input type="radio" name="query-type">
+
+            General Enquiry
+          </label>
+
+          <label>
+            <input type="radio" name="query-type">
+
+            Support Request
+          </label>
+
+          Please select a query type
+        </fieldset>
+
+        <label>
+          <div>
+            Message <span>*</span>
+          </div>
+          <textarea></textarea>
+        </label>
+        This field is required
+
+        <label>
+          <input type="checkbox">
+
+          <div>
+            I consent to being contacted by the team
+            To submit this form, please consent to being contacted <span>*</span>
+          </div>
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+
+    Message Sent!
+    Thanks for completing the form. We'll be in touch soon!
+    </main>
+  </body>
+</html>

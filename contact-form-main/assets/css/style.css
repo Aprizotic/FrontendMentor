@@ -1,0 +1,88 @@
+/* karla-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/static/karla-v33-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* karla-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/static/karla-v33-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  /* Colors */
+  --green-200: 148 38% 91%;
+  --green-600: 169 82% 27%;
+  --red: 0 66% 54%;
+  --white: 0 0% 100%;
+  --grey-500: 186 15% 59%;
+  --grey-900: 187 24% 22%;
+
+  /* Typography */
+  --fonts-sans: 'karla', system-ui, sans-serif;
+  /* Weights: 400, 700 */
+
+  /* Sizes */
+  --size-xxs: 0.25rem;
+  --size-xs: 0.5rem;
+  --size-sm: 1rem;
+  --size-md: 1.5rem;
+  --size-lg: 2rem;
+  --size-xl: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-size: 16px;
+  font-family: var(--fonts-sans);
+}
+
+html, body {
+  inline-size: 100dvi;
+  min-block-size: 100dvb;
+}
+
+body {
+  background-color: hsl(var(--green-200));
+}
+
+main {
+  background-color: hsl(var(--white));
+  border-radius: var(--size-sm);
+  margin-inline: var(--size-sm);
+  margin-block: var(--size-lg);
+  padding: var(--size-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: 1px solid hsl(var(--grey-500));
+  border-radius: var(--size-xxs);
+}
+
+span {
+  display: inline;
+}
