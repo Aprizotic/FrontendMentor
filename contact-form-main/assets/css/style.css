@@ -30,8 +30,8 @@
   /* Weights: 400, 700 */
 
   /* Sizes */
-  --size-xxs: 0.25rem;
-  --size-xs: 0.5rem;
+  --size-xxs: 0.5rem;
+  --size-xs: 0.75rem;
   --size-sm: 1rem;
   --size-md: 1.5rem;
   --size-lg: 2rem;
@@ -43,7 +43,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   font-size: 16px;
   font-family: var(--fonts-sans);
 }
@@ -55,34 +55,112 @@ html, body {
 
 body {
   background-color: hsl(var(--green-200));
+  padding-inline: var(--size-sm);
+  padding-block: var(--size-lg);
+  display: flex;
 }
 
-main {
+.form {
+  inline-size: 100%;
   background-color: hsl(var(--white));
   border-radius: var(--size-sm);
-  margin-inline: var(--size-sm);
-  margin-block: var(--size-lg);
-  padding: var(--size-sm);
+  padding: var(--size-md);
   display: flex;
   flex-direction: column;
+  gap: var(--size-md);
 }
 
-fieldset {
+.form__title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: hsl(var(--grey-900));
+  margin-block-end: var(--size-xxs);
+}
+
+.form__fieldset {
   all: unset;
   display: flex;
   flex-direction: column;
+  gap: var(--size-md);
 }
 
-label {
+.form__legend {
+  color: hsl(var(--grey-900));
+  margin-block-end: var(--size-sm);
+}
+
+.form__required {
+  color: hsl(var(--green-600));
+  margin-inline-start: var(--size-xxs);
+}
+
+.form__fieldset--radio {
+  gap: var(--size-sm);
+}
+
+.form__label {
   display: flex;
   flex-direction: column;
+  gap: var(--size-xxs);
+  color: hsl(var(--grey-900));
+  font-weight: 400;
+  font-size: 1rem;
 }
 
-input {
+.form__label--radio {
+  flex-direction: row;
+  align-items: center;
   border: 1px solid hsl(var(--grey-500));
   border-radius: var(--size-xxs);
+  padding-block: var(--size-sm);
+  padding-inline: var(--size-md);
+  font-size: 1.1rem;
+  font-weight: 400;
+  gap: var(--size-md);
+  cursor: pointer;
 }
 
-span {
-  display: inline;
+.form__input {
+  border: 1px solid hsl(var(--grey-500));
+  border-radius: var(--size-xxs);
+  inline-size: 100%;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: hsl(var(--grey-900));
+  padding-inline: var(--size-md);
+  padding-block: var(--size-sm);
+  cursor: pointer;
+}
+
+.form__input--radio {
+  inline-size: fit-content;
+  transform: scale(1.4);
+}
+
+.form__text-area {
+  all: unset;
+  box-sizing: border-box;
+  border: 1px solid hsl(var(--grey-500));
+  border-radius: var(--size-xxs);
+  padding-inline: var(--size-md);
+  padding-block: var(--size-sm);
+  font-size: 1.1rem;
+  inline-size: 100%;
+  block-size: 15rem;
+  color: hsl(var(--grey-900));
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }

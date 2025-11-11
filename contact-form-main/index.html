@@ -12,72 +12,84 @@
 
   <body>
     <main>
-      <form>
-        <fieldset>
-          <legend>Contact Us</legend>
+      <form class="form">
+        <header class="form__header">
+          <h1 class="form__title">Contact Us</h1>
+        </header>
 
-          <label>
-            <div>
-              First Name <span>*</span>
-            </div>
-            <input type="text">
-          </label>
-          This field is required
+        <fieldset class="form__fieldset">
+          <legend class="form__legend visually-hidden">Your Details</legend>
 
-          <label>
-            <div>
-              Last Name <span>*</span>
+          <label class="form__label">
+            <div class="form__label-text">
+              First Name<span class="form__required">*</span>
             </div>
-            <input type="text">
-          </label>
-          This field is required
 
-          <label>
-            <div>
-              Email Address <span>*</span>
-            </div>
-            <input type="email">
+            <input class="form__input" type="text">
+            
+            <span class="hidden">This field is required</span>
           </label>
-          Please enter a valid email address
-          This field is required
+
+          <label class="form__label">
+            <div class="form__label-text">
+              Last Name<span class="form__required">*</span>
+            </div>
+
+            <input class="form__input" type="text">
+
+            <span class="hidden">This field is required</span>
+          </label>
+
+          <label class="form__label">
+            <div class="form__label-text">
+              Email Address<span class="form__required">*</span>
+            </div>
+
+            <input class="form__input" type="email">
+
+            <span class="hidden">Please enter a valid email address</span>
+            <span class="hidden">This field is required</span>
+          </label>
         </fieldset>
 
-        <fieldset>
-          <legend>Query Type <span>*</span></legend>
+        <fieldset class="form__fieldset form__fieldset--radio">
+          <legend class="form__legend">Query Type<span class="form__required">*</span></legend>
         
-          <label>
-            <input type="radio" name="query-type">
+          <label class="form__label form__label--radio">
+            <input class="form__input form__input--radio" type="radio" name="query-type">
 
             General Enquiry
           </label>
 
-          <label>
-            <input type="radio" name="query-type">
+          <label class="form__label form__label--radio">
+            <input class="form__input form__input--radio" type="radio" name="query-type">
 
             Support Request
           </label>
 
-          Please select a query type
+          <span class="hidden">Please select a query type</span>
         </fieldset>
 
-        <label>
-          <div>
-            Message <span>*</span>
+        <label class="form__label">
+          <div class="form__label-text">
+            Message<span class="form__required">*</span>
           </div>
-          <textarea></textarea>
+
+          <textarea class="form__text-area"></textarea>
+
+          <span class="hidden">This field is required</span>
         </label>
-        This field is required
 
-        <label>
-          <input type="checkbox">
+        <label class="form__label">
+          <input class="form__input" type="checkbox">
 
-          <div>
+          <div class="form__label-text">
             I consent to being contacted by the team
-            To submit this form, please consent to being contacted <span>*</span>
+            To submit this form, please consent to being contacted<span>*</span>
           </div>
         </label>
 
-        <button type="submit">Submit</button>
+        <button class="button" type="submit">Submit</button>
       </form>
 
     Message Sent!
