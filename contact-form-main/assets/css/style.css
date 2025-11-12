@@ -151,6 +151,30 @@ body {
   cursor: pointer;
 }
 
+.form__label--checkbox {
+  flex-direction: row;
+  gap: var(--size-sm);
+  padding-inline: var(--size-xxs);
+  padding-block: var(--size-md);
+  cursor: pointer;
+}
+
+.form__input--checkbox {
+  inline-size: fit-content;
+  transform: scale(1.35);
+}
+
+button {
+  border: none;
+  border-radius: var(--size-xs);
+  background-color: hsl(var(--green-600));
+  color: hsl(var(--white));
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: var(--size-sm);
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
