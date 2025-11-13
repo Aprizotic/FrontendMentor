@@ -20,6 +20,7 @@
   /* Colors */
   --green-200: 148 38% 91%;
   --green-600: 169 82% 27%;
+  --green-900: 164 86% 16%;
   --red: 0 66% 54%;
   --white: 0 0% 100%;
   --grey-500: 186 15% 59%;
@@ -58,6 +59,7 @@ body {
   padding-inline: var(--size-sm);
   padding-block: var(--size-lg);
   display: flex;
+  position: relative;
 }
 
 .form {
@@ -108,6 +110,7 @@ body {
 }
 
 .form__label--radio {
+  position: relative;
   flex-direction: row;
   align-items: center;
   border: 1px solid hsl(var(--grey-500));
@@ -130,11 +133,34 @@ body {
   padding-inline: var(--size-md);
   padding-block: var(--size-sm);
   cursor: pointer;
+  transition: border-color 0.3s ease-out;
+}
+
+.form__input:hover {
+  border-color: hsl(var(--green-600));
 }
 
 .form__input--radio {
   inline-size: fit-content;
   transform: scale(1.4);
+}
+
+.form__radio-button {
+  width: 20px;
+  height: 21px;
+  position: absolute;
+  inset-inline-start: calc(var(--size-md) - 3px);
+  background-image: url("../images/icon-radio-selected.svg");
+  display: none;
+}
+
+.form__input--radio:checked + .form__radio-button {
+  display: block;
+}
+
+.form__label--radio:has(.form__input--radio:checked) {
+  border-color: hsl(var(--green-600));
+  background-color: hsl(var(--green-200));
 }
 
 .form__text-area {
@@ -149,6 +175,7 @@ body {
   block-size: 15rem;
   color: hsl(var(--grey-900));
   cursor: pointer;
+  overflow-wrap: break-word;
 }
 
 .form__label--checkbox {
@@ -157,6 +184,7 @@ body {
   padding-inline: var(--size-xxs);
   padding-block: var(--size-md);
   cursor: pointer;
+  position: relative;
 }
 
 .form__input--checkbox {
@@ -164,7 +192,24 @@ body {
   transform: scale(1.35);
 }
 
-button {
+.form__checkbox {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  inset-inline-start: calc(var(--size-xxs) - 1px);
+  background-image: url("../images/icon-checkbox-check.svg");
+  display: none;
+}
+
+.form__input--checkbox:checked + .form__checkbox {
+  display: block;
+}
+
+.form__input--checkbox:checked, .form__input--radio:checked {
+  visibility: hidden;
+}
+
+.button {
   border: none;
   border-radius: var(--size-xs);
   background-color: hsl(var(--green-600));
@@ -173,6 +218,40 @@ button {
   font-size: 1.15rem;
   padding: var(--size-sm);
   cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+.button:hover {
+  background-color: hsl(var(--green-900));
+}
+
+.form__success {
+  position: fixed;
+  background-color: hsl(var(--grey-900));
+  border-radius: var(--size-xxs);
+  padding: var(--size-md);
+  inline-size: 20rem;
+  max-inline-size: 90%;
+  transform: translateX(-50%); 
+  inset-inline-start: 50%;
+  inset-block-start: 2rem;
+}
+
+.form__success-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--size-xxs);
+  margin-bottom: var(--size-xs);
+}
+
+.form__success-title {
+  color: hsl(var(--white));
+  font-weight: 700;
+}
+
+.form__success-message {
+  color: hsl(var(--white));
+  font-weight: 400;
 }
 
 .hidden {
