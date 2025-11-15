@@ -18,7 +18,7 @@ form.addEventListener('submit', e => {
       if (input.type === 'email') {
         if (input.validity.typeMismatch) {
           let formatError = document.querySelector('[data-js="format-error"]');
-          emailError.classList.add('hidden');
+          formatError.classList.add('hidden');
         } else {
           let requiredError = input.nextElementSibling;
           requiredError.classList.add('hidden');
@@ -40,7 +40,7 @@ form.addEventListener('submit', e => {
       if (input.type === 'email') {
         if (input.validity.typeMismatch) {
           let formatError = document.querySelector('[data-js="format-error"]');
-          emailError.classList.remove('hidden');
+          formatError.classList.remove('hidden');
         } else {
           let requiredError = input.nextElementSibling;
           requiredError.classList.remove('hidden');
