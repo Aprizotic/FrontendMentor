@@ -49,7 +49,7 @@
   font-family: var(--fonts-sans);
 }
 
-html, body {
+html, body, main {
   inline-size: 100dvi;
   min-block-size: 100dvb;
 }
@@ -107,6 +107,7 @@ body {
   color: hsl(var(--grey-900));
   font-weight: 400;
   font-size: 1rem;
+  inline-size: 100%;
 }
 
 .form__label--radio {
@@ -163,6 +164,12 @@ body {
   background-color: hsl(var(--green-200));
 }
 
+.form__radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm);
+}
+
 .form__text-area {
   all: unset;
   box-sizing: border-box;
@@ -187,6 +194,21 @@ body {
   position: relative;
 }
 
+.form__checkbox-wrapper {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  block-size: 100%;
+  inline-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__consent-error {
+  margin-block-start: calc(-1 * var(--size-lg));
+}
+
 .form__input--checkbox {
   inline-size: fit-content;
   transform: scale(1.35);
@@ -195,13 +217,11 @@ body {
 .form__checkbox {
   width: 18px;
   height: 18px;
-  position: absolute;
-  inset-inline-start: calc(var(--size-xxs) - 1px);
   background-image: url("../images/icon-checkbox-check.svg");
   display: none;
 }
 
-.form__input--checkbox:checked + .form__checkbox {
+.form__input--checkbox:checked + .form__checkbox-wrapper .form__checkbox {
   display: block;
 }
 
@@ -254,6 +274,22 @@ body {
   font-weight: 400;
 }
 
+.form__required-message {
+  color: hsl(var(--red));
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.form__input-name {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-md);
+}
+
+.required {
+  border-color: hsl(var(--red));
+}
+
 .hidden {
   display: none;
 }
@@ -266,4 +302,35 @@ body {
   clip-path: inset(50%);
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+@media (min-width: 40rem) {
+  body, main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .form {
+    max-inline-size: 46rem;
+    block-size: 20%;
+    padding: var(--size-xl);
+    margin-block: 8rem;
+  }
+
+  .form__radio-options {
+    flex-direction: row;
+  }
+
+  .form__input-name {
+    flex-direction: row;
+  }
+
+  .form__text-area {
+    max-block-size: 7rem;
+  }
 }

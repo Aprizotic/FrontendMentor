@@ -7,12 +7,14 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="script.js"></script>
+
     <title>Frontend Mentor | Contact form</title>
   </head>
 
   <body>
     <main>
-      <form class="form">
+      <form class="form" novalidate>
         <header class="form__header">
           <h1 class="form__title">Contact Us</h1>
         </header>
@@ -20,56 +22,95 @@
         <fieldset class="form__fieldset">
           <legend class="form__legend visually-hidden">Your Details</legend>
 
-          <label class="form__label">
-            <div class="form__label-text">
-              First Name<span class="form__required">*</span>
-            </div>
+          <div class="form__input-name">
+            <label class="form__label">
+              <div class="form__label-text">
+                First Name<span class="form__required">*</span>
+              </div>
 
-            <input class="form__input" type="text">
-            
-            <span class="hidden">This field is required</span>
-          </label>
+              <input class="form__input" type="text" required>
+              
+              <span
+                class="form__required-message hidden" 
+                data-js="required-error" 
+                aria-live="polite">
+                This field is required
+              </span>
+            </label>
 
-          <label class="form__label">
-            <div class="form__label-text">
-              Last Name<span class="form__required">*</span>
-            </div>
+            <label class="form__label">
+              <div class="form__label-text">
+                Last Name<span class="form__required">*</span>
+              </div>
 
-            <input class="form__input" type="text">
+              <input class="form__input" type="text" required>
 
-            <span class="hidden">This field is required</span>
-          </label>
+              <span 
+                class="form__required-message hidden" 
+                data-js="required-error" 
+                aria-live="polite">
+                This field is required
+              </span>
+            </label>
+          </div>
 
           <label class="form__label">
             <div class="form__label-text">
               Email Address<span class="form__required">*</span>
             </div>
 
-            <input class="form__input" type="email">
+            <input class="form__input" type="email" required>
 
-            <span class="hidden">Please enter a valid email address</span>
-            <span class="hidden">This field is required</span>
+            <span 
+              class="form__required-message hidden" 
+              data-js="required-error" 
+              aria-live="polite">
+              This field is required
+            </span>
+
+            <span 
+              class="form__required-message hidden" 
+              data-js="format-error" 
+              aria-live="polite">
+              Please enter a valid email address
+            </span>
           </label>
         </fieldset>
 
         <fieldset class="form__fieldset form__fieldset--radio">
-          <legend class="form__legend">Query Type<span class="form__required">*</span></legend>
+          <legend class="form__legend">
+            Query Type<span class="form__required">*</span>
+          </legend>
         
-          <label class="form__label form__label--radio">
-            <input class="form__input form__input--radio" type="radio" name="query-type">
-            <span class="form__radio-button" aria-hidden="true"></span>
+          <div class="form__radio-options">
+            <label class="form__label form__label--radio">
+              <input 
+                class="form__input form__input--radio" 
+                type="radio" 
+                name="query-type" 
+                required>
+              <span class="form__radio-button" aria-hidden="true"></span>
 
-            General Enquiry
-          </label>
+              General Enquiry
+            </label>
 
-          <label class="form__label form__label--radio">
-            <input class="form__input form__input--radio" type="radio" name="query-type">
-            <span class="form__radio-button" aria-hidden="true"></span>
-            
-            Support Request
-          </label>
+            <label class="form__label form__label--radio">
+              <input 
+                class="form__input form__input--radio" 
+                type="radio" 
+                name="query-type">
+              <span class="form__radio-button" aria-hidden="true"></span>
+              
+              Support Request
+            </label>
+          </div>
 
-          <span class="hidden">Please select a query type</span>
+          <span 
+            class="form__required-message hidden" 
+            data-js="selection-error" 
+            aria-live="polite">
+            Please select a query type
+        </span>
         </fieldset>
 
         <label class="form__label">
@@ -77,24 +118,37 @@
             Message<span class="form__required">*</span>
           </div>
 
-          <textarea class="form__text-area"></textarea>
+          <textarea class="form__text-area" required></textarea>
 
-          <span class="hidden">This field is required</span>
+          <span 
+            class="form__required-message hidden" 
+            data-js="required-error" 
+            aria-live="polite">
+            This field is required
+          </span>
         </label>
 
         <label class="form__label form__label--checkbox">
-          <input class="form__input form__input--checkbox" type="checkbox">
-          <span class="form__checkbox" aria-hidden="true"></span>
-
+          <input class="form__input form__input--checkbox" type="checkbox" required>
+          <div class="form__checkbox-wrapper">
+            <span class="form__checkbox" aria-hidden="true"></span>
+          </div>
+          
           <div class="form__label-text">
             I consent to being contacted by the team<span class="form__required">*</span>
-            <span class="hidden">To submit this form, please consent to being contacted</span>
           </div>
         </label>
 
+        <span 
+          class="form__required-message form__consent-error hidden" 
+          data-js="consent-error" 
+          aria-live="polite">
+          To submit this form, please consent to being contacted
+        </span>
+
         <button class="button" type="submit">Submit</button>
 
-        <section class="form__success" aria-hidden="true">
+        <section class="form__success hidden" aria-live="polite">
           <div class="form__success-heading">
             <img src="assets/images/icon-success-check.svg">
             <span class="form__success-title">Message Sent!</span>
