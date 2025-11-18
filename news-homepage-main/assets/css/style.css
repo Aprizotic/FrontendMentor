@@ -320,6 +320,7 @@ a {
     align-items: center;
     block-size: 100%;
     right: 0;
+    inline-size: fit-content;
   }
 }
 
