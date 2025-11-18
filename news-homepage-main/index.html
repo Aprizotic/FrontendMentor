@@ -15,12 +15,14 @@
 
   <body>
     <header class="header">
-      <img 
-        class="header__logo"
-        src="assets/images/logo.svg" 
-        alt=""
-        width="65"
-        height="40">
+      <a href="#" aria-label="Go to top">
+        <img 
+          class="header__logo"
+          src="assets/images/logo.svg" 
+          alt=""
+          width="65"
+          height="40">
+      </a>
 
       <nav class="header__nav">
         <button class="header__menu-button" data-js="open-modal">
@@ -58,7 +60,7 @@
     </header>
 
     <main class="grid">
-      <article class="card">
+      <article class="card grid__main">
         <picture>
           <source media="(min-width: 40rem)" srcset="assets/images/image-web-3-desktop.jpg">
           <img 
@@ -67,17 +69,22 @@
             class="card__image">
         </picture>
 
-        <h1 class="card__heading">The Bright Future of Web 3.0?</h1>
+        <div class="card__info-wrapper" aria-hidden="true">
+          <h1 class="card__heading">The Bright Future of Web 3.0?</h1>
 
-        <p class="card__summary">
-          We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-          But is it really fulfilling its promise?
-        </p>
-        
-        <a href="#" class="CTA">READ MORE</a>
+          <div class="card__summary-wrapper" aria-hidden="true">
+            <p class="card__summary">
+              We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+              But is it really fulfilling its promise?
+            </p>
+            
+            <a href="#" class="CTA"
+               aria-label="Read more about The Bright Future of Web 3.0">READ MORE</a>
+          </div>
+        </div>
       </article>
 
-      <section class="card card--dark card--padded">
+      <section class="card card--dark card--padded grid__side">
         <h2 class="card__subheading">New</h2> 
 
         <ul class="card__news-items">
@@ -108,10 +115,10 @@
         </ul>
       </section>
 
-      <section class="card">
+      <section class="card grid__footer">
         <h2 class="card__subheading visually-hidden">Editor's Picks</h2>
 
-        <ol class="card__news-items card__news-items--xl-gap">
+        <ol class="card__news-items card__news-items--sub card__news-items--xl-gap">
           <li class="card__news-item card__news-item--row">
             <img 
               src="assets/images/image-retro-pcs.jpg" 
