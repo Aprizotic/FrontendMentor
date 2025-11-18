@@ -76,8 +76,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-block: var(--xl);
-  padding-inline-start: var(--lg);
-  padding-inline-end: var(--sm);
+  padding-inline: var(--md);
   position: sticky;
   inset-block-start: 0;
 }
@@ -92,11 +91,46 @@ body {
   cursor: pointer;
 }
 
+.header__menu-button--close {
+  position: absolute;
+  z-index: 1;
+  inset-inline-end: var(--lg);
+  inset-block-start: 1.6rem;
+}
+
+.header__nav-items {
+  background-color: hsl(var(--off-white));
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  block-size: 100dvb;
+  inline-size: 68dvi;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+  padding-inline-start: clamp(1.25rem, 0.75rem + 2.5vw, 2rem);
+  padding-block-end: 11rem;
+}
+
+.header__nav-item {
+  color: hsl(var(--very-dark-blue));
+  font-weight: 400;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 0.75rem + 2.5vw, 2rem);
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+.header__nav-item:hover {
+  color: hsl(var(--soft-red));
+}
+
 .grid {
   display: flex;
   flex-direction: column;
-  padding-inline-start: var(--lg);
-  padding-inline-end: var(--md);
+  padding-inline: var(--md);
   padding-block-end: var(--xxl);
   gap: var(--xxl);
 }
