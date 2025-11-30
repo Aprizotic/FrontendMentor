@@ -1,0 +1,142 @@
+/* kumbh-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/kumbh-sans-v27-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* kumbh-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/kumbh-sans-v27-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  /* Colors */
+  --orange: 26 100% 55%;
+  --pale-orange: 25 100% 94%;
+  --very-dark-blue: 220 13% 13%;
+  --dark-grayish-blue: 219 9% 45%;
+  --light-grayish-blue: 223 64% 98%;
+  --white: 0 0% 100%;
+  --black: 0 0% 0%; /* 75% opacity for lightbox bg */
+
+  /* Typography */
+  --font-sans: 'Kumbh Sans', system-ui, sans-serif;
+  /* Weights: 400, 700 */
+
+  /* Sizes */
+  --xxs: 0.25rem;
+  --xs: 0.5rem;
+  --sm: 0.75rem;
+  --md: 1rem;
+  --lg: 1.25rem;
+  --xl: 1.5rem;
+  --xxl: 1.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, main {
+  inline-size: 100dvi;
+  min-block-size: 200dvb;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+body {
+  background-color: hsl(var(--white));
+}
+
+header {
+  position: sticky;
+  inset-block-start: 0;
+  inline-size: 100dvi;
+}
+
+.nav {
+  background-color: hsl(var(--white));
+  display: flex;
+  flex-direction: row;
+  padding: var(--lg);
+  padding-inline: var(--xl);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button--menu {
+  all: unset;
+  display: flex;
+  gap: var(--md);
+  align-items: center;
+  padding-block-end: var(--xs);
+}
+
+.nav__menu-icon {
+  padding-block-start: var(--xxs);
+}
+
+.nav__profile {
+  display: flex;
+  align-items: center;
+  gap: var(--lg);
+}
+
+.button--cart {
+  all: unset;
+  justify-self: end;
+}
+
+.button--profile {
+  all: unset;
+  justify-self: end;
+}
+
+.nav__pfp {
+  width: 25px;
+  height: auto;
+}
+
+.card__image-preview {
+  position: relative;
+}
+
+.card__preview-image {
+  width: 100dvi;
+  height: 300px;
+  object-fit: cover;
+}
+
+.button--previous {
+  all: unset;
+  background-color: hsl(var(--white));
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inset-inline-start: var(--md);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}

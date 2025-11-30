@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <button class="button button--menu" aria-label="Open Menu">
+          <img src="assets/images/icon-menu.svg" 
+               alt=""
+               class="nav__menu-icon">
+
+          <img src="assets/images/logo.svg" 
+               alt="">
+        </button>
+
+        <ul class="hidden">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+
+        <section class="nav__profile">
+          <button class="button button--cart" aria-label="Open Cart">
+            <img src="assets/images/icon-cart.svg" alt="">
+          </button>
+
+          <button class="button button--profile" aria-label="Open Profile">
+            <img src="assets/images/image-avatar.png"
+                alt=""
+                class="nav__pfp">
+          </button>
+        </section>
+      </nav>
+    </header>
+
+    <main class="card">
+      <section class="card__image-preview">
+        <button class=" button button--previous" aria-label="Previous Image">
+          <img src="assets/images/icon-previous.svg" 
+               alt=""
+               width="12px"
+               height="18px">
+        </button>
+
+        <ul class="card__preview-images">
+          <li>
+            <img src="assets/images/image-product-1.jpg"
+                   alt=""
+                   class="card__preview-image">
+          </li>
+          <li class="hidden">
+            <img src="assets/images/image-product-2.jpg"
+                   alt=""
+                   class="card__preview-image hidden">
+          </li>
+          <li class="hidden">
+            <img src="assets/images/image-product-3.jpg"
+                   alt=""
+                   class="card__preview-image hidden">
+          </li>
+          <li class="hidden">
+            <img src="assets/images/image-product-4.jpg"
+                   alt=""
+                   class="card__preview-image hidden">
+          </li>
+        </ul>
+      </section>
+
+      <article>
+        <span>Sneaker Company</span>
+
+        <h1>Fall Limited Edition Sneakers</h1>
+
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+
+        <data value="125.00">$125.00</data>
+        <span>50%</span>
+        <span>$250.00</span>
+
+        <span>0</span>
+        <button>Add to cart</button>
+      </article>
+    </main>
+  </body>
+</html>
