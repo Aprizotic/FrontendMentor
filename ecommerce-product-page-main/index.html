@@ -17,10 +17,14 @@
         <button class="button button--menu" aria-label="Open Menu">
           <img src="assets/images/icon-menu.svg" 
                alt=""
-               class="nav__menu-icon">
+               class="nav__menu-icon"
+               width="16px"
+               height="15px">
 
           <img src="assets/images/logo.svg" 
-               alt="">
+               alt=""
+               width="138px"
+               height="20px">
         </button>
 
         <ul class="hidden">
@@ -33,13 +37,18 @@
 
         <section class="nav__profile">
           <button class="button button--cart" aria-label="Open Cart">
-            <img src="assets/images/icon-cart.svg" alt="">
+            <img src="assets/images/icon-cart.svg" 
+                 alt=""
+                 width="22px"
+                 height="20px">
           </button>
 
           <button class="button button--profile" aria-label="Open Profile">
             <img src="assets/images/image-avatar.png"
                 alt=""
-                class="nav__pfp">
+                class="nav__pfp"
+                width="100px"
+                height="100px">
           </button>
         </section>
       </nav>
@@ -47,11 +56,8 @@
 
     <main class="card">
       <section class="card__image-preview">
-        <button class=" button button--previous" aria-label="Previous Image">
-          <img src="assets/images/icon-previous.svg" 
-               alt=""
-               width="12px"
-               height="18px">
+        <button class="button button--previous" aria-label="Previous Image">
+          <svg width="12" height="18" class="card__previous-image-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="5" fill="none" fill-rule="evenodd"/></svg>
         </button>
 
         <ul class="card__preview-images">
@@ -76,21 +82,29 @@
                    class="card__preview-image hidden">
           </li>
         </ul>
+
+        <button class="button button--next" aria-label="Next Image">
+          <svg width="13" height="18" class="card__previous-image-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="5" fill="none" fill-rule="evenodd"/></svg>
+        </button>
       </section>
 
-      <article>
-        <span>Sneaker Company</span>
+      <article class="product-card">
+        <span class="product-card__company-name">SNEAKER COMPANY</span>
 
-        <h1>Fall Limited Edition Sneakers</h1>
+        <h1 class="product-card__heading">Fall Limited Edition Sneakers</h1>
 
-        <p>
+        <p class="product-card__description">
           These low-profile sneakers are your perfect casual wear companion. Featuring a 
           durable rubber outer sole, they’ll withstand everything the weather can offer.
         </p>
 
-        <data value="125.00">$125.00</data>
-        <span>50%</span>
-        <span>$250.00</span>
+        <div class="product-card__price-wrapper">
+          <div class="product-card__discount-bundle">
+            <data class="product-card__discounted-price" value="125.00">$125.00</data>
+            <span class="product-card__discount">50% <span class="visually-hidden">off</span></span>
+          </div>
+          <span class="product-card__original-price">$250.00 <span class="visually-hidden">original price</span></span>
+        </div>
 
         <span>0</span>
         <button>Add to cart</button>

@@ -48,6 +48,10 @@
   padding: 0;
 }
 
+li {
+  line-height: 0;
+}
+
 html, body, main {
   inline-size: 100dvi;
   min-block-size: 200dvb;
@@ -88,6 +92,7 @@ header {
 
 .nav__menu-icon {
   padding-block-start: var(--xxs);
+  height: 19px;
 }
 
 .nav__profile {
@@ -96,15 +101,9 @@ header {
   gap: var(--lg);
 }
 
-.button--cart {
+.button--cart, .button--profile {
   all: unset;
-  justify-self: end;
-}
-
-.button--profile {
-  all: unset;
-  justify-self: end;
-}
+} 
 
 .nav__pfp {
   width: 25px;
@@ -121,7 +120,7 @@ header {
   object-fit: cover;
 }
 
-.button--previous {
+.button--previous, .button--next {
   all: unset;
   background-color: hsl(var(--white));
   width: 40px;
@@ -130,13 +129,65 @@ header {
   position: absolute;
   inset-block-start: 50%;
   transform: translateY(-50%);
-  inset-inline-start: var(--md);
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.button--previous {
+  inset-inline-start: var(--md);
+}
+
+.button--next {
+  inset-inline-end: var(--md);
+}
+
+.card__previous-image-icon, .card__next-image-icon {
+  transform: scale(calc(2 / 3));
+}
+
+.product-card {
+  padding: var(--xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+}
+
+.product-card__company-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: hsl(var(--dark-grayish-blue));
+  letter-spacing: 2px;
+}
+
+.product-card__heading {
+  font-size: 1.75rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: hsl(var(--very-dark-blue));
+  margin-block-end: var(--xs);
+}
+
+.product-card__description {
+  font-size: 0.95rem;
+  color: hsl(var(--dark-grayish-blue));
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 .hidden {
   display: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
