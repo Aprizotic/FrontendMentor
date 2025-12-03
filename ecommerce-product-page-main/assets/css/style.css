@@ -18,6 +18,7 @@
 
 :root {
   /* Colors */
+  --blue: 190 70% 60%;
   --orange: 26 100% 55%;
   --pale-orange: 25 100% 94%;
   --very-dark-blue: 220 13% 13%;
@@ -54,7 +55,7 @@ li {
 
 html, body, main {
   inline-size: 100dvi;
-  min-block-size: 200dvb;
+  min-block-size: 100dvb;
 }
 
 html {
@@ -70,6 +71,31 @@ header {
   position: sticky;
   inset-block-start: 0;
   inline-size: 100dvi;
+  z-index: 99;
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  background-color: hsl(var(--orange));
+  inline-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: var(--lg);
+  border-radius: var(--sm);
+  color: hsl(var(--very-dark-blue));
+  font-weight: 700;
+  gap: var(--md);
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.button.button--primary:hover {
+  background-color: hsl(var(--blue));
+}
+
+.button--shadow {
+  box-shadow: 20px 20px 8px 0px hsl(var(--pale-orange));
 }
 
 .nav {
@@ -83,11 +109,19 @@ header {
 }
 
 .button--menu {
-  all: unset;
   display: flex;
   gap: var(--md);
   align-items: center;
+  padding-block-start: 0;
   padding-block-end: var(--xs);
+  background: none;
+  justify-content: start;
+  inline-size: fit-content;
+}
+
+.button--profile, .button--cart, .button--subtract, .button--add {
+  padding: 0;
+  background: none;
 }
 
 .nav__menu-icon {
@@ -100,10 +134,6 @@ header {
   align-items: center;
   gap: var(--lg);
 }
-
-.button--cart, .button--profile {
-  all: unset;
-} 
 
 .nav__pfp {
   width: 25px;
@@ -121,7 +151,6 @@ header {
 }
 
 .button--previous, .button--next {
-  all: unset;
   background-color: hsl(var(--white));
   width: 40px;
   height: 40px;
@@ -133,6 +162,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-block: 0;
 }
 
 .button--previous {
@@ -174,6 +204,90 @@ header {
   color: hsl(var(--dark-grayish-blue));
   font-weight: 400;
   line-height: 1.6;
+}
+
+.product-card__price-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: var(--sm);
+}
+
+.product-card__discount-bundle {
+  display: flex;
+  gap: var(--sm);
+}
+
+.product-card__discounted-price {
+  color: hsl(var(--very-dark-blue));
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.product-card__discount {
+  color: hsl(var(--light-grayish-blue));
+  background-color: hsl(var(--very-dark-blue));
+  height: max-content;
+  padding-inline: 0.6rem;
+  padding-block: 0.2rem;
+  align-self: end;
+  border-radius: 0.3rem;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-block-end: 2px;
+}
+
+.product-card__original-price {
+  color: hsl(var(--dark-grayish-blue));
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: line-through;
+  letter-spacing: 0.5px;
+}
+
+.product-card__quantity-selector {
+  background-color: hsl(var(--light-grayish-blue));
+  inline-size: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: var(--md);
+  padding-inline: var(--xl);
+  border-radius: var(--sm);
+  margin-block: var(--xxs);
+  block-size: fit-content;
+}
+
+.button--subtract {
+  justify-content: start;
+  fill: hsl(var(--orange));
+  transition: fill 0.3s ease-out;
+}
+
+.button--add {
+  justify-content: end;
+  fill: hsl(var(--orange));
+  transition: fill 0.3s ease-out;
+}
+
+.button:hover.button--add {
+  fill: hsl(var(--blue));
+}
+
+.button:hover.button--subtract {
+  fill: hsl(var(--blue));
+}
+
+.product__card-quantity {
+  color: hsl(var(--very-dark-blue));
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.button__cart-icon {
+  transform: scale(0.85);
+  fill: hsl(var(--very-dark-blue));
 }
 
 .hidden {
