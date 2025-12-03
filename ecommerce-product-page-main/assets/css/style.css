@@ -369,6 +369,10 @@ header {
   font-weight: 700;
 }
 
+.button__cart-button-icon {
+  fill: hsl(var(--dark-grayish-blue));
+}
+
 /* Utility Classes */
 
 .hidden {
