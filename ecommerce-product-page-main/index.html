@@ -7,14 +7,19 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="script.js"></script>
 
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
 
   <body>
     <header>
+      <div class="dim-overlay hidden"></div>
+
       <nav class="nav">
-        <button class="button button--menu" aria-label="Open Menu">
+        <button class="button button--menu" 
+                aria-label="Open Menu"
+                data-js="open-menu">
           <img src="assets/images/icon-menu.svg" 
                alt=""
                class="nav__menu-icon"
@@ -27,12 +32,20 @@
                height="20px">
         </button>
 
-        <ul class="hidden">
-          <li>Collections</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
+        <ul class="nav__menu hidden">
+          <li class="nav__menu-close-icon">
+            <button class="button button--close-menu" 
+                    aria-label="close-menu" 
+                    data-js="close-menu">
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
+            </button>
+          </li>
+
+          <li><a href="#" class="nav__menu-item">Collections</a></li>
+          <li><a href="#" class="nav__menu-item">Men</a></li>
+          <li><a href="#" class="nav__menu-item">Women</a></li>
+          <li><a href="#" class="nav__menu-item">About</a></li>
+          <li><a href="#" class="nav__menu-item">Contact</a></li>
         </ul>
 
         <section class="nav__profile">
