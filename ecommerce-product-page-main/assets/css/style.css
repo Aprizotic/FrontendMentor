@@ -324,6 +324,53 @@ header {
   fill: hsl(var(--very-dark-blue));
 }
 
+.dim-overlay {
+  position: fixed;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  background-color: hsl(var(--black) / 0.75);
+  z-index: 3;
+}
+
+.cart {
+  position: absolute;
+  background-color: hsl(var(--white));
+  inset-block-start: calc(100% + var(--xs));
+  inset-inline-start: var(--xs);
+  inline-size: calc(100% - var(--md));
+  block-size: 68dvi;
+  border-radius: var(--xs);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 35px 25px -20px hsl(var(--black) / 0.2);
+}
+
+.cart__heading {
+  color: hsl(var(--very-dark-blue));
+  font-weight: 700;
+  padding-block-start: var(--lg);
+  padding-block-end: var(--xxl);
+  padding-inline: var(--xl);
+  border-bottom: 1px solid hsl(var(--dark-grayish-blue) / 0.2);
+}
+
+.cart__basket {
+  block-size: 100%;
+  padding-block: var(--lg);
+  padding-inline: var(--xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart__empty-text {
+  padding-block-end: var(--md);
+  color: hsl(var(--dark-grayish-blue));
+  font-weight: 700;
+}
+
+/* Utility Classes */
+
 .hidden {
   display: none;
 }
@@ -338,12 +385,4 @@ header {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
-}
-
-.dim-overlay {
-  position: fixed;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  background-color: hsl(var(--black) / 0.75);
-  z-index: 3;
 }
