@@ -1,0 +1,223 @@
+/* outfit-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/outfit-v15-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/outfit-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/outfit-v15-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  /* Colors */
+  --blue-500: 215 51% 70%;
+  --cyan-400: 178 100% 50%;
+  --blue-950: 217 54% 11%; /* Main BG */
+  --blue-900: 216 50% 16%; /* Card BG */
+  --blue-800: 215 32% 27%; /* Line */
+  --white: 0 0% 100%;
+  --black: 0 0% 0%;
+
+  /* Typography */
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  /* Weights 300, 400, 600 */
+
+  /* Sizes */
+  --xxs: 0.25rem;
+  --xs: 0.5rem;
+  --sm: 0.75rem;
+  --md: 1rem;
+  --lg: 1.25rem;
+  --xl: 1.5rem;
+  --xxl: 1.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  inline-size: 100dvi;
+  min-block-size: 100dvb;
+}
+
+html {
+  font-size: 18px;
+  font-family: var(--font-sans);
+}
+
+body {
+  background: radial-gradient(ellipse 1600px 800px at 50% 25%, hsl(var(--blue-950)) 80%, hsl(var(--blue-900)));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+
+.card {
+  background-color: hsl(var(--blue-900));
+  inline-size: clamp(18.2rem, 17.75rem + 1.9vw, 19.5rem);
+  block-size: clamp(30rem, 29rem + 4.5vw, 33rem);
+  border-radius: var(--sm);
+  padding: var(--lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm);
+}
+
+.card__img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--xs);
+  overflow: hidden;
+  display: block; /* Fix extra spacing */
+  position: relative;
+}
+
+.card__heading {
+  color: hsl(var(--white));
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-block-start: var(--xxs);
+}
+
+.card__description {
+  color: hsl(var(--blue-500));
+  font-size: clamp(0.9rem, 1rem + 0.2vw, 1rem);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.card__link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+}
+
+.card__link:hover {
+  color: hsl(var(--cyan-400));
+}
+
+.card__rule {
+  border: none;
+  border-top: 1px solid hsl(var(--blue-800));
+}
+
+.card--shadow {
+  box-shadow: 0 25px 10px 15px hsl(var(--black) / 0.1);
+}
+
+.card__link--white {
+  color: hsl(var(--white));
+}
+
+/* Stats */
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  padding-block-start: var(--xxs);
+  padding-inline-end: var(--xxs);
+}
+
+.stats__stat {
+  display: flex;
+  align-items: center;
+  gap: var(--xs);
+}
+
+.stats__amount {
+  color: hsl(var(--cyan-400));
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1rem + 0.2vw, 1rem);
+  letter-spacing: -0.5px;
+}
+
+.stats__time {
+  color: hsl(var(--blue-500));
+  font-weight: 400;
+  font-size: clamp(0.85rem, 1rem + 0.2vw, 0.9rem);
+}
+
+/* Profile */
+
+.profile {
+  padding-block-start: var(--xxs);
+  display: flex;
+  align-items: center;
+  gap: var(--md);
+}
+
+.profile__picture {
+  width: 32px;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid hsl(var(--white));
+}
+
+.profile__description {
+  font-size: clamp(0.9rem, 1rem + 0.2vw, 0.95rem);
+  font-weight: 400;
+  color: hsl(var(--blue-500));
+  letter-spacing: -0.5px;
+}
+
+/* Overlay */
+
+.overlay {
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--cyan-400) / 0.5);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+/* Media Queries */
+
+@media (min-width: 50rem) {
+  .card__heading {
+    font-size: 1.2rem;
+  }
+
+  .stats {
+    padding-block: var(--sm);
+  }
+
+  .profile {
+    padding: 0;
+  }
+}
+
