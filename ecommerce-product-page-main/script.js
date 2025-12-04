@@ -8,6 +8,23 @@ const cart = document.querySelector('.cart');
 const navMenu = document.querySelector('.nav__menu');
 const dimOverlay = document.querySelector('.dim-overlay');
 const images = document.querySelectorAll('.card__preview-image-wrapper');
+const thumbnailButtons = document.querySelectorAll('.button--thumbnail');
+const thumbnails = document.querySelectorAll('.card__thumbnail');
+const quantity = document.querySelector('.product__card-quantity');
+const addButton = document.querySelector('.button--add');
+const subtractButton = document.querySelector('.button--subtract');
+
+addButton.addEventListener('click', () => {
+  if (quantity.textContent !== '99') {
+    quantity.textContent = parseInt(quantity.textContent) + 1;
+  }
+});
+
+subtractButton.addEventListener('click', () => {
+  if (quantity.textContent !== '0') {
+    quantity.textContent = parseInt(quantity.textContent) - 1;
+  }
+});
 
 openMenuButton.addEventListener('click', () => {
   navMenu.classList.toggle('hidden');
@@ -68,4 +85,26 @@ nextButton.addEventListener('click', () => {
   });
 
   nextImage.classList.remove('hidden');
+});
+
+thumbnailButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    thumbnailButtons.forEach(button => {
+      button.classList.remove('active-button');
+    });
+
+    button.classList.add('active-button');
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.classList.remove('active-image');
+    });
+
+    button.firstElementChild.classList.add('active-image');
+
+    images.forEach(image => {
+      image.classList.add('hidden');
+    });
+
+    images[index].classList.remove('hidden');
+  });
 });
