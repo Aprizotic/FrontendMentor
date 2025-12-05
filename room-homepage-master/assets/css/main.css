@@ -1,0 +1,189 @@
+/* league-spartan-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/league-spartan-v15-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* league-spartan-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/league-spartan-v15-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* league-spartan-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/league-spartan-v15-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* league-spartan-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "League Spartan";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/league-spartan-v15-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+.grid__img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block; /* Fix gap under images */
+}
+
+.header {
+  inline-size: 100dvi;
+  block-size: 9.5dvb;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-inline: var(--xl);
+}
+.header__logo {
+  order: 1;
+  position: absolute;
+}
+.header__menu-button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-inline-end: auto;
+}
+
+.nav {
+  position: absolute;
+}
+
+.hero {
+  position: relative;
+}
+.hero__slide {
+  padding-inline: var(--max);
+  padding-block: calc(var(--max) * 1.85);
+  display: flex;
+  flex-direction: column;
+  gap: var(--md);
+}
+.hero__heading {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 0.95;
+  color: hsl(var(--black));
+  letter-spacing: -1px;
+}
+.hero__description {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: hsl(var(--grey-500));
+  letter-spacing: -0.5px;
+}
+.hero__CTA {
+  display: flex;
+  align-items: center;
+  gap: var(--md);
+  padding-block: var(--xl) var(--sm);
+}
+.hero__link {
+  all: unset;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: hsl(var(--black));
+  letter-spacing: 12.75px;
+}
+
+.aside {
+  padding-inline: var(--max);
+  padding-block: calc(var(--max) * 1.7) calc(var(--max) * 1.3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--lg);
+}
+.aside__heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: hsl(var(--black));
+  letter-spacing: 6.5px;
+}
+.aside__description {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: hsl(var(--grey-500));
+}
+
+.slider {
+  position: absolute;
+  background-color: hsl(var(--black));
+  inset-inline-end: 0;
+  inset-block-start: calc(-1.95rem - var(--xl));
+}
+.slider__button {
+  all: unset;
+  padding-inline: var(--lg);
+  padding-block: var(--sm);
+  block-size: 1.95rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider__icon {
+  transform: scale(0.65);
+}
+
+:root {
+  /* Colors */
+  --white: 0 100% 100%;
+  --grey-500: 0 0% 63%;
+  --grey-800: 0 0% 27%;
+  --black: 0 0% 0%;
+  /* Sizes */
+  --xxs: 0.25rem;
+  --xs: 0.5rem;
+  --sm: 0.75rem;
+  --md: 1rem;
+  --lg: 1.25rem;
+  --xl: 1.5rem;
+  --xxl: 1.75rem;
+  --max: 2rem;
+  /* Typography (Weights: 500, 600, 700) */
+  --font-sans: League Spartan, system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  inline-size: 100dvi;
+  min-block-size: 100dvb;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+body {
+  background-color: hsl(var(--white));
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}/*# sourceMappingURL=main.css.map */
