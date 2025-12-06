@@ -39,6 +39,7 @@
 }
 
 .header {
+  inset: 0;
   inline-size: 100dvi;
   block-size: 9.5dvb;
   position: absolute;
@@ -60,7 +61,31 @@
 }
 
 .nav {
+  background-color: hsl(var(--white));
+  inset: 0;
+  inline-size: 100dvi;
+  block-size: 16.5dvb;
   position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: var(--xl);
+  z-index: 2;
+}
+.nav__close-button {
+  all: unset;
+}
+.nav__menu {
+  list-style: none;
+  display: flex;
+  gap: 2.1rem;
+}
+.nav__menu-item {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  color: hsl(var(--black));
+  letter-spacing: -1px;
 }
 
 .hero {
@@ -128,18 +153,27 @@
   background-color: hsl(var(--black));
   inset-inline-end: 0;
   inset-block-start: calc(-1.95rem - var(--xl));
+  display: flex;
+  padding-inline: calc(var(--xxs) - 0.1rem);
+  padding-block: var(--sm);
 }
 .slider__button {
   all: unset;
   padding-inline: var(--lg);
-  padding-block: var(--sm);
   block-size: 1.95rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .slider__icon {
-  transform: scale(0.65);
+  transform: scale(0.7);
+  stroke-width: 2px;
+}
+
+.dimmer {
+  position: absolute;
+  background-color: hsl(var(--black)/0.5);
+  z-index: 1;
 }
 
 :root {
@@ -169,7 +203,7 @@
   padding: 0;
 }
 
-html, body {
+html, body, .dimmer {
   inline-size: 100dvi;
   min-block-size: 100dvb;
 }
