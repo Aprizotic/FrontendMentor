@@ -42,7 +42,7 @@
     </header>
 
     <main class="grid">
-      <picture>
+      <picture class="grid__picture">
         <source srcset="assets/images/desktop-image-hero-1.jpg" 
                 type="image/jpeg"
                 media="(min-width: 376px)">
@@ -51,10 +51,10 @@
               alt="Side shot of a white and oak dining table set, with a bonsai ontop, inside a house"
               width="375px"
               height="360px"
-              class="grid__img">
+              class="grid__img grid__img--hero">
       </picture>
 
-      <picture>
+      <picture class="grid__picture">
         <source srcset="assets/images/desktop-image-hero-2.jpg" 
                 type="image/jpeg"
                 media="(min-width: 376px)">
@@ -63,10 +63,10 @@
               alt="Side shot of a white and oak dining table set, with a bonsai ontop, inside a house"
               width="375px"
               height="360px"
-              class="grid__img hidden">
+              class="grid__img grid__img--hero hidden">
       </picture>
 
-      <picture>
+      <picture class="grid__picture">
         <source srcset="assets/images/desktop-image-hero-3.jpg" 
                 type="image/jpeg"
                 media="(min-width: 376px)">
@@ -75,24 +75,24 @@
               alt="Side shot of a white and oak dining table set, with a bonsai ontop, inside a house"
               width="375px"
               height="360px"
-              class="grid__img hidden">
+              class="grid__img grid__img--hero hidden">
       </picture>
 
+      <div class="slider">
+        <button class="slider__button"
+                aria-label="Previous Slide"
+                data-js="previous-slide">
+          <svg class="slider__icon" width="14" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"/></svg>
+        </button>
+
+        <button class="slider__button"
+                aria-label="Next Slide"
+                data-js="next-slide">
+          <svg class="slider__icon" width="14" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
+
       <section class="hero">
-        <div class="slider">
-          <button class="slider__button"
-                  aria-label="Previous Slide"
-                  data-js="previous-slide">
-            <svg class="slider__icon" width="14" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"/></svg>
-          </button>
-
-          <button class="slider__button"
-                  aria-label="Next Slide"
-                  data-js="next-slide">
-            <svg class="slider__icon" width="14" height="24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"/></svg>
-          </button>
-        </div>
-
         <section class="hero__slide">
           <h1 class="hero__heading">
             Discover innovative ways to decorate
@@ -145,7 +145,7 @@
            alt="Moody shot of modern black chairs with a modern bedroom in the background"
            width="420px"
            height="266px"
-           class="grid__img">
+           class="grid__img grid__img--dark">
 
       <aside class="aside">
         <h2 class="aside__heading">ABOUT OUR FURNITURE</h2>
@@ -162,7 +162,7 @@
            alt="Low opacity, front facing shot of a modern white chair"
            width="440px"
            height="266px"
-           class="grid__img">
+           class="grid__img grid__img--light">
     </main>
   </body>
 </html>

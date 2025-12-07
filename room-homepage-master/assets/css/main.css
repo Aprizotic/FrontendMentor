@@ -30,12 +30,36 @@
   font-weight: 700;
   src: url("../fonts/league-spartan-v15-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* Mixins + Functions */
+/* Clamp value calculator (only one unit type) */
+/* Breakpoints + Sizes */
+/* These can be separated into different files but the project is too small */
+/* Components */
 .grid__img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   display: block; /* Fix gap under images */
+}
+@media (min-width: 90rem) {
+  .grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 29dvi 29.5dvi 11dvi 30.5dvi;
+  }
+  .grid__picture {
+    grid-row: 1/2;
+    grid-column: 1/3;
+  }
+  .grid__img--dark {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .grid__img--light {
+    grid-row: 2/3;
+    grid-column: 4/5;
+  }
 }
 
 .header {
@@ -45,7 +69,7 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   padding-inline: var(--xl);
 }
 .header__logo {
@@ -81,35 +105,35 @@
   gap: 2.1rem;
 }
 .nav__menu-item {
-  font-size: 1rem;
   font-weight: 600;
   line-height: 1;
   color: hsl(var(--black));
+  font-size: clamp(1rem, 0.264rem + 3.2vw, 1.8rem);
   letter-spacing: -1px;
 }
 
 .hero {
   position: relative;
+  padding-inline: clamp(2rem, 0.6268656716rem + 5.9701492537vw, 6rem);
+  padding-block: clamp(3.7rem, 2.3955223881rem + 5.671641791vw, 7.5rem);
 }
 .hero__slide {
-  padding-inline: var(--max);
-  padding-block: calc(var(--max) * 1.85);
   display: flex;
   flex-direction: column;
   gap: var(--md);
 }
 .hero__heading {
-  font-size: 2.4rem;
   font-weight: 600;
   line-height: 0.95;
   color: hsl(var(--black));
+  font-size: clamp(2.4rem, 2.228358209rem + 0.7462686567vw, 2.9rem);
   letter-spacing: -1px;
 }
 .hero__description {
-  font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
   color: hsl(var(--grey-500));
+  font-size: 1rem;
   letter-spacing: -0.5px;
 }
 .hero__CTA {
@@ -120,54 +144,108 @@
 }
 .hero__link {
   all: unset;
-  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1;
   color: hsl(var(--black));
+  font-size: clamp(0.9rem, 0.8656716418rem + 0.1492537313vw, 1rem);
   letter-spacing: 12.75px;
+}
+@media (min-width: 90rem) {
+  .hero {
+    grid-row: 1/2;
+    grid-column: 3/5;
+  }
+  .hero__heading {
+    margin-block-end: var(--xs);
+  }
+  .hero__CTA {
+    padding-block: var(--xxs);
+  }
+  .hero__link {
+    letter-spacing: 12px;
+  }
 }
 
 .aside {
-  padding-inline: var(--max);
-  padding-block: calc(var(--max) * 1.7) calc(var(--max) * 1.3);
+  padding-inline: clamp(2rem, 1.6567164179rem + 1.4925373134vw, 3rem);
+  padding-block: 3.4rem 2.6rem;
   display: flex;
   flex-direction: column;
   gap: var(--lg);
 }
 .aside__heading {
-  font-size: 0.8rem;
   font-weight: 700;
   line-height: 1;
   color: hsl(var(--black));
+  font-size: 0.8rem;
   letter-spacing: 6.5px;
 }
 .aside__description {
-  font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.45;
   color: hsl(var(--grey-500));
+  font-size: 0.95rem;
+}
+@media (min-width: 90rem) {
+  .aside {
+    grid-row: 2/3;
+    grid-column: 2/4;
+    padding-block: 4.1rem;
+  }
+  .aside__heading {
+    font-size: 1rem;
+    letter-spacing: 6.75px;
+  }
+  .aside__description {
+    margin-block-start: -0.4rem;
+  }
 }
 
 .slider {
   position: absolute;
-  background-color: hsl(var(--black));
   inset-inline-end: 0;
-  inset-block-start: calc(-1.95rem - var(--xl));
   display: flex;
-  padding-inline: calc(var(--xxs) - 0.1rem);
-  padding-block: var(--sm);
+  z-index: 2;
 }
 .slider__button {
   all: unset;
   padding-inline: var(--lg);
-  block-size: 1.95rem;
+  block-size: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: hsl(var(--black));
+  cursor: pointer;
+  transition: opacity 0.2s ease-out;
 }
 .slider__icon {
   transform: scale(0.7);
   stroke-width: 2px;
+}
+@media (min-width: 90rem) {
+  .slider {
+    grid-row: 1/2;
+    grid-column: 3/4;
+    position: static;
+    block-size: -moz-fit-content;
+    block-size: fit-content;
+    align-self: end;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider__button {
+    flex: 1;
+    padding-block: clamp(1.5rem, -3rem + 5vw, 3rem);
+  }
+  .slider__button:hover {
+    opacity: 0.75;
+  }
+  .slider__icon {
+    transform: unset;
+    stroke-width: 1.4px;
+  }
 }
 
 .dimmer {

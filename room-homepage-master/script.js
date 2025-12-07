@@ -5,10 +5,11 @@ const nav = document.querySelector('.nav');
 const dimmer = document.querySelector('.dimmer');
 
 // Slider
+const slider = document.querySelector('.slider');
 const previousSlideButton = document.querySelector('[data-js="previous-slide"]');
 const nextSlideButton = document.querySelector('[data-js="next-slide"]');
 const heroSlides = document.querySelectorAll('.hero__slide');
-const images = document.querySelectorAll('.grid__img');
+const images = document.querySelectorAll('.grid__img--hero');
 
 // Nav function
 
@@ -79,4 +80,17 @@ nextSlideButton.addEventListener('click', () => {
     heroSlides[index + 1].classList.remove('hidden');
     images[index + 1].classList.remove('hidden');
   }
+});
+
+const observer = new ResizeObserver(entries => {
+  for (const entry of entries) {
+    if (!entry.target.classList.contains('hidden')) {
+      let styles = getComputedStyle(slider);
+      slider.style.top = `calc(${entry.contentRect.height}px - ${styles.height})`;
+    }
+  }
+});
+
+images.forEach(image => {
+  observer.observe(image);
 });
