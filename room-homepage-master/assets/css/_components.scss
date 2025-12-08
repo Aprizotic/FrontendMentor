@@ -17,13 +17,14 @@
 
 /* Breakpoints + Sizes */
 
+$tablet-bp: 50rem;
 $desktop-bp: 90rem;
 $phone-width: 23rem;
 $tablet-width: 48rem;
 $desktop-width: 90rem;
 $max-width: 120rem;
 
-/* These can be separated into different files but the project is too small */
+/* These can be separated into different files */
 
 /* Components */
 
@@ -33,6 +34,31 @@ $max-width: 120rem;
     height: auto;
     object-fit: cover;
     display: block; /* Fix gap under images */
+  }
+
+  &__decor {
+    display: none;
+  }
+
+  @media (min-width: $tablet-bp) {
+    display: grid;
+    grid-template-rows: repeat(auto, 5);
+    grid-template-columns: auto auto;
+
+    &__picture {
+      grid-row: 1 / 2;
+      grid-column: 1 / 3;
+    }
+
+    &__image--dark {
+      grid-row: 3 / 4;
+      grid-column: 1 / 2;
+    }
+
+    &__image--light {
+      grid-row: 3 / 4;
+      grid-column: 2 / 3;
+    }
   }
 
   @media (min-width: $desktop-bp) {
@@ -61,7 +87,7 @@ $max-width: 120rem;
 .header {
   inset: 0;
   inline-size: 100dvi;
-  block-size: 9.5dvb;
+  block-size: max(4rem, 4vw);
   position: absolute;
   display: flex;
   justify-content: center;
@@ -80,6 +106,32 @@ $max-width: 120rem;
     align-items: center;
     margin-inline-end: auto;
   }
+
+  @media (min-width: $tablet-bp) {
+    padding-inline: 3rem;
+
+    &__logo {
+      transform: scale(1.5);
+    }
+
+    &__menu-button {
+      transform: scale(1.5);
+    }
+  }
+
+  @media (min-width: $desktop-bp) {
+    justify-content: flex-start;
+    padding-inline: 4rem;
+    block-size: 5rem;
+
+    &__logo {
+      transform: unset;
+    }
+
+    &__menu-button {
+      display: none;
+    }
+  }
 }
 
 
@@ -87,7 +139,7 @@ $max-width: 120rem;
   background-color: hsl(var(--white));
   inset: 0;
   inline-size: 100dvi;
-  block-size: 16.5dvb;
+  block-size: max(7rem, 20vw);
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -97,6 +149,7 @@ $max-width: 120rem;
 
   &__close-button {
     all: unset;
+    cursor: pointer;
   }
 
   &__menu {
@@ -108,6 +161,68 @@ $max-width: 120rem;
       @include text-style(600, 1, hsl(var(--black)));
       font-size: clamp(1rem, fluid-type($phone-width, $tablet-width, 1rem, 1.8rem), 1.8rem);
       letter-spacing: -1px;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: $tablet-bp) {
+    inline-size: 10rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding-block-start: 4rem;
+
+    &__menu {
+      flex-direction: column;
+      gap: 5rem;
+
+      &-item {
+        text-align: center;
+      }
+    }
+
+    &__close-button {
+      transform: scale(1.5);
+    }
+  }
+
+  @media (min-width: $desktop-bp) {
+    background-color: transparent;
+    border: none;
+    padding-block: 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    block-size: 9rem;
+    padding-inline-start: 11.5rem;
+
+    &__menu {
+      flex-direction: row;
+      gap: 2rem;
+
+      &-item {
+        position: relative;
+        font-size: 1rem;
+        font-size: clamp(1rem, fluid-type($desktop-width, $max-width, 1rem, 1.5rem), 1.5rem);
+        color: hsl(var(--white));
+        display: flex;
+        justify-content: center;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          width: 0;
+          height: 2px;
+          background-color: hsl(var(--white));
+          transition: width 0.2s ease-out;
+        }
+
+        &:hover::before {
+          width: 50%;
+        }
+      }
     }
   }
 }
@@ -117,6 +232,7 @@ $max-width: 120rem;
   position: relative;
   padding-inline: clamp(2rem, fluid-type($phone-width, $desktop-bp, 2rem, 6rem), 6rem);
   padding-block: clamp(3.7rem, fluid-type($phone-width, $desktop-bp, 3.7rem, 7.5rem), 7.5rem);
+  background-color: hsl(var(--white));
 
   &__slide {
     display: flex;
@@ -132,7 +248,7 @@ $max-width: 120rem;
 
   &__description {
     @include text-style(600, 1.4, hsl(var(--grey-500)));
-    font-size: 1rem;
+    font-size: clamp(0.99rem, fluid-type($phone-width, $tablet-width, 0.99rem, 1.3rem), 1.3rem);
     letter-spacing: -0.5px;
   }
 
@@ -141,6 +257,12 @@ $max-width: 120rem;
     align-items: center;
     gap: var(--md);
     padding-block: var(--xl) var(--sm);
+    cursor: pointer;
+    transition: opacity 0.2s ease-out;
+
+    &:hover {
+      animation: fadeMask 2s forwards;
+    }
   }
 
   &__link {
@@ -150,20 +272,32 @@ $max-width: 120rem;
     letter-spacing: 12.75px;
   }
 
+  @media (min-width: $tablet-bp) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
+
   @media (min-width: $desktop-bp) {
     grid-row: 1 / 2;
     grid-column: 3 / 5;
 
     &__heading {
       margin-block-end: var(--xs);
+      font-size: clamp(2.9rem, fluid-type($desktop-width, $max-width, 2.9rem, 4.5rem), 4.5rem);
+    }
+
+    &__description {
+      font-size: 1rem;
+      font-size: clamp(1rem, fluid-type($desktop-width, $max-width, 1rem, 1.5rem), 1.5rem);
     }
 
     &__CTA {
-      padding-block: var(--xxs);
+      padding-block: clamp(0.25rem, fluid-type($desktop-width, $max-width, 0.25rem, 2rem), 2rem);
     }
     
     &__link {
       letter-spacing: 12px;
+      font-size: clamp(1rem, fluid-type($desktop-width, $max-width, 1rem, 1.4rem), 1.4rem);
     }
   }
 }
@@ -178,13 +312,22 @@ $max-width: 120rem;
 
   &__heading {
     @include text-style(700, 1, hsl(var(--black))); 
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, fluid-type($phone-width, $tablet-width, 0.8rem, 1.5rem), 1.5rem);
     letter-spacing: 6.5px;
   }
 
   &__description {
     @include text-style(500, 1.45, hsl(var(--grey-500)));
-    font-size: 0.95rem;
+    font-size: clamp(0.95rem, fluid-type($phone-width, $tablet-width, 0.8rem, 1.5rem), 1.2rem);
+  }
+
+  @media (min-width: $tablet-bp) {
+    grid-row: 4 / 5;
+    grid-column: 1 / 3;
+
+    &__heading {
+      text-align: end;
+    }
   }
   
   @media (min-width: $desktop-bp) {
@@ -195,9 +338,13 @@ $max-width: 120rem;
     &__heading {
       font-size: 1rem;
       letter-spacing: 6.75px;
+      text-align: start;
+      font-size: clamp(1rem, fluid-type($desktop-width, $max-width, 1rem, 1.6rem), 1.6rem);
     }
 
     &__description {
+      font-size: 0.95rem;
+      font-size: clamp(0.95rem, fluid-type($desktop-width, $max-width, 0.95rem, 1.25rem), 1.25rem);
       margin-block-start: -0.4rem;
     }
   }
@@ -212,8 +359,8 @@ $max-width: 120rem;
 
   &__button {
     all: unset;
-    padding-inline: var(--lg);
-    block-size: 3.5rem;
+    padding-inline: clamp(1.25rem, fluid-type($phone-width, $tablet-width, 1.25rem, 2rem), 2rem);
+    block-size: clamp(3.5rem, fluid-type($phone-width, $tablet-width, 3.5rem, 5rem), 5rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -225,6 +372,13 @@ $max-width: 120rem;
   &__icon {
     transform: scale(0.7);
     stroke-width: 2px;
+  }
+
+  @media (min-width: $tablet-bp) {
+    &__icon {
+      transform: unset;
+      stroke-width: 1.4px;
+    }
   }
 
   @media (min-width: $desktop-bp) {
@@ -240,16 +394,11 @@ $max-width: 120rem;
 
     &__button {
       flex: 1;
-      padding-block: clamp(1.5rem, fluid-type($desktop-width, $max-width, 1.5rem, 3rem), 3rem);
+      padding-block: clamp(0rem, fluid-type($desktop-width, $max-width, 0rem, 1rem), 1rem);
 
       &:hover {
       opacity: 0.75;
     }
-    }
-
-    &__icon {
-      transform: unset;
-      stroke-width: 1.4px;
     }
   }
 }
@@ -259,4 +408,19 @@ $max-width: 120rem;
   position: absolute;
   background-color: hsl(var(--black) / 0.5);
   z-index: 1;
+}
+
+
+.fade-ltr {
+  mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-size: 200% 100%;
+}
+
+@keyframes fadeMask {
+  from {
+    mask-position: 0% 0;
+  }
+  to {
+    mask-position: -100% 0;
+  }
 }

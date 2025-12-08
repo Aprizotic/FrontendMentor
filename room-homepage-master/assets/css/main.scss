@@ -39,6 +39,16 @@ body {
   background-color: hsl(var(--white));
 }
 
+a {
+  all: unset;
+}
+
+:focus-visible {
+  outline: 2px solid green;
+  outline-offset: 2px;  
+  z-index: 2;
+}
+
 /* Utility Classes */
 
 .hidden {

@@ -1,3 +1,7 @@
+// Breakpoints
+const tabletBp = window.matchMedia('(min-width: 50rem)');
+const desktopBp = window.matchMedia('(min-width: 90rem)');
+
 // Nav
 const openMenuButton = document.querySelector('[data-js="open-menu"]');
 const closeMenuButton = document.querySelector('[data-js="close-menu"]');
@@ -11,21 +15,42 @@ const nextSlideButton = document.querySelector('[data-js="next-slide"]');
 const heroSlides = document.querySelectorAll('.hero__slide');
 const images = document.querySelectorAll('.grid__img--hero');
 
+// Functions
+
+const updateNav = e => {
+  if (e.matches) {
+    nav.classList.remove('hidden');
+    closeMenuButton.classList.add('hidden');
+  } else {
+    nav.classList.add('hidden');
+    closeMenuButton.classList.remove('hidden');
+  }
+};
+
 // Nav function
 
 openMenuButton.addEventListener('click', () => {
   nav.classList.remove('hidden');
-  dimmer.classList.remove('hidden');
+  openMenuButton.setAttribute('aria-expanded', 'true');
+  closeMenuButton.focus();
+
+  if (!tabletBp.matches) {
+    dimmer.classList.remove('hidden');
+  }
 });
 
 closeMenuButton.addEventListener('click', () => {
   nav.classList.add('hidden');
   dimmer.classList.add('hidden');
+  openMenuButton.setAttribute('aria-expanded', 'false');
+  openMenuButton.focus();
 });
 
 dimmer.addEventListener('click', () => {
   nav.classList.add('hidden');
   dimmer.classList.add('hidden');
+  openMenuButton.setAttribute('aria-expanded', 'false');
+  openMenuButton.focus();
 });
 
 // Slider function
@@ -87,6 +112,15 @@ const observer = new ResizeObserver(entries => {
     if (!entry.target.classList.contains('hidden')) {
       let styles = getComputedStyle(slider);
       slider.style.top = `calc(${entry.contentRect.height}px - ${styles.height})`;
+      
+      if (tabletBp.matches && !desktopBp.matches) {
+        nav.style.blockSize = `calc(${entry.contentRect.height}px`;
+      }
+
+      if (desktopBp.matches) {
+        nav.style.inlineSize = `calc(${entry.contentRect.width}px`;
+        nav.style.blockSize = '9rem';
+      }
     }
   }
 });
@@ -94,3 +128,7 @@ const observer = new ResizeObserver(entries => {
 images.forEach(image => {
   observer.observe(image);
 });
+
+desktopBp.addEventListener('change', updateNav);
+
+updateNav(desktopBp);
