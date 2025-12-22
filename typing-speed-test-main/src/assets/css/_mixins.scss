@@ -1,0 +1,72 @@
+/* Text presets */
+/* Weights: 400, 600, 700 */
+
+@mixin text-1-mobile {
+  font-size: 40px;
+  line-height: 1.36;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+}
+
+@mixin text-1-regular {
+  font-size: 40px;
+  line-height: 1.36;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+
+@mixin text-1-regular-mobile {
+  font-size: 32px;
+  line-height: 1.36;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+}
+
+@mixin text-2 {
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+@mixin text-3 {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+}
+
+@mixin text-3-mobile {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  font-weight: 400;
+}
+
+@mixin text-3-semibold {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  font-weight: 600;
+}
+
+@mixin text-4 {
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  font-size: 400;
+}
+
+@mixin text-5 {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  font-weight: 400;
+}
+
+@mixin text-6 {
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-weight: 400;
+}

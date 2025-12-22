@@ -1,0 +1,29 @@
+@use 'mixins' as mixin;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__pb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-125);
+    padding-block-end: var(--spacing-50);
+
+    &-icon {
+      width: 18px;
+      height: 16px;
+    }
+  }
+
+  &__span {
+    @include mixin.text-3-mobile;
+    color: hsl(var(--neutral-400));
+    align-self: flex-start;
+
+    &--white {
+      color: hsl(var(--neutral-0));
+    }
+  }
+}
