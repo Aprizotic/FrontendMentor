@@ -5,6 +5,7 @@
   /* Colors */
   --neutral-900: 0 0% 7%;
   --neutral-800: 0 0% 15%;
+  --neutral-700: 0 0% 23%;
   --neutral-500: 240 3% 46%;
   --neutral-400: 240 1% 59%;
   --neutral-0: 0 0% 100%;
@@ -77,4 +78,11 @@ body {
   background-color: hsl(var(--neutral-900));
   padding-inline: var(--spacing-200);
   padding-block: var(--spacing-200) var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+img {
+  display: block;
 }

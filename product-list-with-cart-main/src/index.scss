@@ -1,0 +1,40 @@
+@use './assets/styles/fonts';
+
+:root {
+  /* Colors */
+  --white: 255 100% 100%;
+  --red: 14 86% 42%;
+  --green: 159 69% 38%;
+  --rose-50: 20 50% 98%;
+  --rose-100: 13 31% 94%;
+  --rose-300: 14 25% 72%;
+  --rose-400: 7 20% 60%;
+  --rose-500: 12 20% 44%;
+  --rose-900: 14 65% 9%;
+
+  /* Weights: 400 600 700 */
+  font-family: 'Red Hat Text', sans-serif, system-ui;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--white);
+}
