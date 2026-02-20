@@ -1,7 +1,7 @@
-function Cart() {
+function Cart({ cartTotal }) {
   return (
     <section className="cart">
-      <h2 className="cart__heading">Your Cart (0)</h2>
+      <h2 className="cart__heading">Your Cart ({cartTotal})</h2>
 
       <div className="cart__empty-wrapper">
         <img
