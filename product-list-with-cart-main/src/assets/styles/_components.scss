@@ -136,4 +136,124 @@
     font-weight: 600;
     letter-spacing: -0.2px;
   }
+
+  &__populated-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__delivery-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--xs);
+    background-color: hsl(var(--rose-50));
+    font-size: 0.875rem;
+    padding-block: var(--xs);
+    color: hsl(var(--rose-900));
+    margin-block-end: var(--max);
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  &__total-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--max);
+  }
+
+  &__total-heading {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: hsl(var(--rose-900));
+  }
+
+  &__total-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--rose-900));
+    line-height: 1;
+  }
+
+  &__button {
+    all: unset;
+    background-color: hsl(var(--red));
+    color: hsl(var(--white));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block-end: 1px solid hsl(var(--rose-100));
+  padding-block: var(--md);
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--xs);
+  }
+
+  &__heading {
+    color: hsl(var(--rose-900));
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  &__stats {
+    display: flex;
+    gap: var(--md);
+  }
+
+  &__quantity {
+    color: hsl(var(--red));
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  &__pricing {
+    display: flex;
+    gap: var(--xs);
+  }
+
+  &__price {
+    color: hsl(var(--rose-400));
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  &__total-price {
+    color: hsl(var(--rose-500));
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding-inline-end: var(--md);
+  }
+
+  &__remove-button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid hsl(var(--rose-300));
+    cursor: pointer;
+  }
 }

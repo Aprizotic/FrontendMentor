@@ -1,6 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { ItemContext } from "../App";
 
-function CartButton({ quantity, setQuantity, setCartTotal }) {
+function CartButton({
+  quantity,
+  setQuantity,
+  setCartTotal,
+  product,
+  setPriceTotal,
+}) {
+  const { items, setItems } = useContext(ItemContext);
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -9,20 +17,56 @@ function CartButton({ quantity, setQuantity, setCartTotal }) {
 
       if (quantity !== 0) {
         img.classList.add("active");
+      } else if (quantity === 1) {
+        setItems((prev) => {
+          prev.append(product);
+        });
       } else {
         img.classList.remove("active");
       }
     }
   }, [quantity]);
 
+  const addItem = () => {
+    setItems((prev) => {
+      const existing = prev.find((i) => i.name === product.name);
+
+      if (existing) {
+        return prev.map((i) =>
+          i.name === product.name ? { ...i, quantity: i.quantity + 1 } : i,
+        );
+      }
+
+      return [...prev, { ...product, quantity: 1 }];
+    });
+  };
+
+  const removeItem = () => {
+    setItems((prev) => {
+      const existing = prev.find(
+        (i) => i.name === product.name && i.quantity > 1,
+      );
+
+      if (existing) {
+        return prev.map((i) =>
+          i.name === product.name ? { ...i, quantity: i.quantity - 1 } : i,
+        );
+      }
+
+      return prev.filter((i) => i.quantity !== 1);
+    });
+  };
+
   const decrement = () => {
     setQuantity((prev) => prev - 1);
     setCartTotal((prev) => prev - 1);
+    setPriceTotal((prev) => prev - product.price);
   };
 
   const increment = () => {
     setQuantity((prev) => prev + 1);
     setCartTotal((prev) => prev + 1);
+    setPriceTotal((prev) => prev + product.price);
   };
 
   return (
@@ -31,7 +75,13 @@ function CartButton({ quantity, setQuantity, setCartTotal }) {
       className={`product-card__button ${quantity === 0 ? "" : "active"}`}
     >
       {quantity === 0 ? (
-        <button className="product-card__add-to-cart" onClick={increment}>
+        <button
+          className="product-card__add-to-cart"
+          onClick={() => {
+            increment();
+            addItem();
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"
@@ -54,7 +104,13 @@ function CartButton({ quantity, setQuantity, setCartTotal }) {
         </button>
       ) : (
         <div className="product-card__quantity-selector">
-          <button className="product-card__quantity-button" onClick={decrement}>
+          <button
+            className="product-card__quantity-button"
+            onClick={() => {
+              decrement();
+              removeItem();
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="10"
@@ -69,7 +125,13 @@ function CartButton({ quantity, setQuantity, setCartTotal }) {
 
           <span style={{ pointerEvents: "none" }}>{quantity}</span>
 
-          <button className="product-card__quantity-button" onClick={increment}>
+          <button
+            className="product-card__quantity-button"
+            onClick={() => {
+              increment();
+              addItem();
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="10"

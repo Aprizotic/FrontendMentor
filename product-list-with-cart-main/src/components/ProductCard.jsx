@@ -1,7 +1,7 @@
 import CartButton from "./CartButton";
 import { useState } from "react";
 
-function ProductCard({ product, setCartTotal }) {
+function ProductCard({ product, setCartTotal, setPriceTotal }) {
   const [quantity, setQuantity] = useState(0);
 
   return (
@@ -12,6 +12,8 @@ function ProductCard({ product, setCartTotal }) {
           quantity={quantity}
           setQuantity={setQuantity}
           setCartTotal={setCartTotal}
+          product={product}
+          setPriceTotal={setPriceTotal}
         />
       </div>
 
