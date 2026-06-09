@@ -1,0 +1,124 @@
+@use "fonts";
+
+:root {
+  /* Colors */
+  --gold-500: hsl(31, 77%, 52%);
+  --cyan-800: hsl(184, 100%, 22%);
+  --green-950: hsl(179, 100%, 13%);
+  --t-white: hsla(0, 0%, 100%);
+  --gray-100: hsl(0, 0%, 95%);
+
+  /* Sizes */
+  --xxs: 0.25rem;
+  --xs: 0.5rem;
+  --sm: 0.75rem;
+  --md: 1rem;
+  --lg: 1.25rem;
+  --xl: 1.5rem;
+  --xxl: 1.75rem;
+  --max: 2rem;
+
+  /* Weights 400, 700 */
+  --font-family-main: "Lexend Deca", sans-serif, system;
+  --font-family-title: "Big Shoulders", sans-serif, system;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  inline-size: 100dvi;
+  min-block-size: 100dvb;
+}
+
+body {
+  background-color: var(--gray-100);
+  padding-inline: var(--xl);
+  padding-block: 5.5rem;
+}
+
+main {
+  border-radius: var(--xs);
+  overflow: hidden;
+}
+
+.card {
+  block-size: auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    margin-block-end: var(--max);
+  }
+
+  &__title {
+    font-family: var(--font-family-title);
+    font-weight: 700;
+    color: var(--gray-100);
+    font-size: 2.3rem;
+    letter-spacing: -1px;
+    margin-block-end: var(--xl);
+  }
+
+  &__description {
+    font-family: var(--font-family-main);
+    font-weight: 400;
+    color: var(--t-white);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-block-end: 1.6rem;
+  }
+
+  &--sedans {
+    background-color: var(--gold-500);
+  }
+
+  &--suvs {
+    background-color: var(--cyan-800);
+  }
+
+  &--luxury {
+    background-color: var(--green-950);
+  }
+}
+
+.primary-button {
+  all: unset;
+  cursor: pointer;
+  width: max-content;
+  background-color: var(--t-white);
+  border-radius: 999px;
+  padding-block: var(--sm);
+  padding-inline: var(--max);
+  font-family: var(--font-family-main);
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &--sedans {
+    color: var(--gold-500);
+  }
+
+  &--suvs {
+    color: var(--cyan-800);
+  }
+
+  &--luxury {
+    color: var(--green-950);
+  }
+}

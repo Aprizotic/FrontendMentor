@@ -1,0 +1,180 @@
+/* sora-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/sora-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sora-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/sora-v17-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* sora-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/sora-v17-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* Text presets */
+/* Weights: 400, 600, 700 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__pb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-125);
+}
+.header__pb-icon {
+  width: 18px;
+  height: 16px;
+}
+.header__span {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  font-weight: 400;
+  color: hsl(var(--neutral-400));
+  align-self: flex-start;
+}
+.header__span--white {
+  color: hsl(var(--neutral-0));
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+.main__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-250);
+  padding-block-end: var(--spacing-200);
+  border-block-end: 1px solid hsl(var(--neutral-700));
+}
+.main__stats {
+  display: flex;
+  gap: var(--spacing-250);
+}
+.main__stat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: var(--spacing-100);
+}
+.main__stat-heading {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.48px;
+  font-weight: 400;
+  color: hsl(var(--neutral-400));
+}
+.main__stat {
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.main__stat--white {
+  color: hsl(var(--neutral-0));
+}
+.main__stat--red {
+  color: hsl(var(--red-500));
+}
+.main__stat--yellow {
+  color: hsl(var(--yellow-400));
+}
+.main__divider {
+  width: 1px;
+  background-color: hsl(var(--neutral-700));
+}
+
+:root {
+  /* Colors */
+  --neutral-900: 0 0% 7%;
+  --neutral-800: 0 0% 15%;
+  --neutral-700: 0 0% 23%;
+  --neutral-500: 240 3% 46%;
+  --neutral-400: 240 1% 59%;
+  --neutral-0: 0 0% 100%;
+  --blue-600: 214 100% 55%;
+  --blue-400: 210 100% 65%;
+  --red-500: 354 63% 57%;
+  --green-500: 140 63% 57%;
+  --yellow-400: 49 85% 70%;
+  /* Spacing */
+  --spacing-0: 0;
+  --spacing-25: 2px;
+  --spacing-50: 4px;
+  --spacing-75: 6px;
+  --spacing-100: 8px;
+  --spacing-125: 10px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-250: 20px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1000: 80px;
+  --spacing-1200: 96px;
+  --spacing-1400: 112px;
+  --spacing-1600: 128px;
+  --spacing-1800: 140px;
+  /* Radius */
+  --radius-0: 0;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 999px;
+  /* Typography */
+  --font-sans: 'Sora', system-ui, sans-serif; /* Weights: 400, 600, 700 */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  inline-size: 100dvi;
+  min-block-size: 100dvb;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+body {
+  background-color: hsl(var(--neutral-900));
+  padding-inline: var(--spacing-200);
+  padding-block: var(--spacing-200) var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+}
+
+img {
+  display: block;
+}/*# sourceMappingURL=main.css.map */
