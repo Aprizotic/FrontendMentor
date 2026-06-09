@@ -2,6 +2,7 @@ import "./App.scss";
 import productData from "./assets/data/data.json";
 import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
+import CartItem from "./components/CartItem";
 import { useState, createContext } from "react";
 export const ItemContext = createContext();
 

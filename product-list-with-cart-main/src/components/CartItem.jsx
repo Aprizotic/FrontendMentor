@@ -1,4 +1,16 @@
-function CartItem({ item }) {
+function CartItem({ item, setItems }) {
+  const removeItem = () => {
+    setQuantity((prev) => prev - item.quantity);
+    setCartTotal((prev) => prev - item.quantity);
+    setPriceTotal(
+      (prev) => prev - (item.price * parseInt(item.quantity)).toFixed(2),
+    );
+
+    setItems((prev) => {
+      return prev.filter((i) => i.name !== item.name);
+    });
+  };
+
   return (
     <div className="cart-item">
       <div className="cart-item__details">
@@ -13,7 +25,7 @@ function CartItem({ item }) {
           </div>
         </div>
       </div>
-      <button className="cart-item__remove-button">
+      <button onClick={removeItem} className="cart-item__remove-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="10"

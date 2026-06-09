@@ -257,3 +257,17 @@
     cursor: pointer;
   }
 }
+
+.confirmation-modal {
+  block-size: 88.3%;
+  inline-size: 100dvi;
+  max-inline-size: 100dvi;
+  inset: 0;
+  inset-block-start: auto;
+  margin: 0;
+  border: none;
+  border-radius: var(--sm);
+  padding: var(--xl);
+  padding-block: 2.5rem;
+  background-color: black;
+}
