@@ -63,6 +63,8 @@ body {
 main {
   border-radius: var(--xs);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card {
@@ -107,14 +109,16 @@ main {
   width: max-content;
   background-color: var(--t-white);
   border-radius: 999px;
-  padding-block: var(--sm);
-  padding-inline: var(--max);
+  padding-block: 0.6rem;
+  padding-inline: 1.8rem;
   font-family: var(--font-family-main);
   font-size: 0.95rem;
-  transition: opacity 0.2s ease-out;
+  border: 2px solid var(--t-white);
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
 .primary-button:hover {
-  opacity: 0.7;
+  background-color: transparent;
+  color: var(--t-white);
 }
 .primary-button--sedans {
   color: var(--gold-500);
@@ -124,4 +128,22 @@ main {
 }
 .primary-button--luxury {
   color: var(--green-950);
+}
+
+@media (width >= 58rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    padding-block-start: 10.6rem;
+  }
+  main {
+    flex-direction: row;
+    align-self: flex-start;
+  }
+  .card {
+    max-inline-size: 19.2rem;
+  }
+  .card__description {
+    padding-block-end: 3.75rem;
+  }
 }/*# sourceMappingURL=index.css.map */
