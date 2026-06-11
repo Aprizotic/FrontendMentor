@@ -5,7 +5,11 @@ function ProductCard({ product }) {
   return (
     <article className="product-card">
       <div className="product-card__wrapper">
-        <img className="product-card__img" src={product.image.mobile} />
+        <picture>
+          <source media="(min-width: 50rem)" srcSet={product.image.desktop} />
+          <source media="(min-width: 30rem)" srcSet={product.image.tablet} />
+          <img className="product-card__img" src={product.image.mobile} />
+        </picture>
         <CartButton product={product} />
       </div>
 

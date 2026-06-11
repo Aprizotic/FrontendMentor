@@ -15,11 +15,14 @@ function App() {
       <h1 className="main__heading">Desserts</h1>
 
       <ItemContext.Provider value={contextValue}>
-        {productData.map((product) => (
-          <ProductCard product={product} key={product.name} />
-        ))}
-
-        <Cart items={items} productData={productData} />
+        <section className="main-page">
+          <section className="products">
+            {productData.map((product) => (
+              <ProductCard product={product} key={product.name} />
+            ))}
+          </section>
+          <Cart items={items} productData={productData} />
+        </section>
       </ItemContext.Provider>
     </main>
   );
