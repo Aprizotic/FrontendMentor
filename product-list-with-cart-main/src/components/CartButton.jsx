@@ -1,21 +1,21 @@
 import { useEffect, useRef, useContext } from "react";
 import { ItemContext } from "../App";
 
-function CartButton({
-  quantity,
-  setQuantity,
-  setCartTotal,
-  product,
-  setPriceTotal,
-}) {
+function CartButton({ product }) {
   const { items, setItems } = useContext(ItemContext);
   const buttonRef = useRef(null);
+  const currentProduct = items.find((item) => item.name === product.name);
+  let quantity = 0;
+
+  if (currentProduct !== undefined) {
+    quantity = currentProduct.quantity;
+  }
 
   useEffect(() => {
     if (buttonRef.current) {
       const img = buttonRef.current.previousElementSibling;
 
-      if (quantity !== 0) {
+      if (quantity !== 0 || undefined) {
         img.classList.add("active");
       } else if (quantity === 1) {
         setItems((prev) => {
@@ -57,18 +57,6 @@ function CartButton({
     });
   };
 
-  const decrement = () => {
-    setQuantity((prev) => prev - 1);
-    setCartTotal((prev) => prev - 1);
-    setPriceTotal((prev) => prev - product.price);
-  };
-
-  const increment = () => {
-    setQuantity((prev) => prev + 1);
-    setCartTotal((prev) => prev + 1);
-    setPriceTotal((prev) => prev + product.price);
-  };
-
   return (
     <div
       ref={buttonRef}
@@ -78,7 +66,6 @@ function CartButton({
         <button
           className="product-card__add-to-cart"
           onClick={() => {
-            increment();
             addItem();
           }}
         >
@@ -107,7 +94,6 @@ function CartButton({
           <button
             className="product-card__quantity-button"
             onClick={() => {
-              decrement();
               removeItem();
             }}
           >
@@ -128,7 +114,6 @@ function CartButton({
           <button
             className="product-card__quantity-button"
             onClick={() => {
-              increment();
               addItem();
             }}
           >

@@ -1,20 +1,12 @@
 import CartButton from "./CartButton";
 import { useState } from "react";
 
-function ProductCard({ product, setCartTotal, setPriceTotal }) {
-  const [quantity, setQuantity] = useState(0);
-
+function ProductCard({ product }) {
   return (
     <article className="product-card">
       <div className="product-card__wrapper">
         <img className="product-card__img" src={product.image.mobile} />
-        <CartButton
-          quantity={quantity}
-          setQuantity={setQuantity}
-          setCartTotal={setCartTotal}
-          product={product}
-          setPriceTotal={setPriceTotal}
-        />
+        <CartButton product={product} />
       </div>
 
       <div className="product-card__details">

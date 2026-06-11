@@ -7,9 +7,7 @@ import { useState, createContext } from "react";
 export const ItemContext = createContext();
 
 function App() {
-  const [cartTotal, setCartTotal] = useState(0);
   const [items, setItems] = useState([]);
-  const [priceTotal, setPriceTotal] = useState(0);
   const contextValue = { items, setItems };
 
   return (
@@ -18,15 +16,10 @@ function App() {
 
       <ItemContext.Provider value={contextValue}>
         {productData.map((product) => (
-          <ProductCard
-            product={product}
-            setCartTotal={setCartTotal}
-            setPriceTotal={setPriceTotal}
-            key={product.name}
-          />
+          <ProductCard product={product} key={product.name} />
         ))}
 
-        <Cart cartTotal={cartTotal} items={items} priceTotal={priceTotal} />
+        <Cart items={items} productData={productData} />
       </ItemContext.Provider>
     </main>
   );

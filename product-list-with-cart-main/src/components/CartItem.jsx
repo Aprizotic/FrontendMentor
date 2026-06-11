@@ -1,17 +1,17 @@
-function CartItem({ item, setItems }) {
+function CartItem({ item, setItems, isThumbnail, productData }) {
   const removeItem = () => {
-    setQuantity((prev) => prev - item.quantity);
-    setCartTotal((prev) => prev - item.quantity);
-    setPriceTotal(
-      (prev) => prev - (item.price * parseInt(item.quantity)).toFixed(2),
-    );
-
     setItems((prev) => {
       return prev.filter((i) => i.name !== item.name);
     });
   };
 
-  return (
+  const foundItem = productData.find((product) => {
+    return product.name === item.name;
+  });
+
+  const thumbnail = foundItem.image.thumbnail;
+
+  return isThumbnail === false ? (
     <div className="cart-item">
       <div className="cart-item__details">
         <span className="cart-item__heading">{item.name}</span>
@@ -39,6 +39,26 @@ function CartItem({ item, setItems }) {
           />
         </svg>
       </button>
+    </div>
+  ) : (
+    <div className="cart-item">
+      <div className="cart-item__thumbnail-wrapper">
+        <img className="cart-item__thumbnail" src={thumbnail} />
+        <div className="cart-item__details">
+          <span className="cart-item__heading">{item.name}</span>
+          <div className="cart-item__stats">
+            <span className="cart-item__quantity">{item.quantity}x</span>
+            <div className="cart-item__pricing">
+              <span className="cart-item__price">
+                @ ${item.price.toFixed(2)}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span className="cart-item__total-price cart-item__total-price--thumbnail">
+        ${(item.price * parseInt(item.quantity)).toFixed(2)}
+      </span>
     </div>
   );
 }

@@ -191,6 +191,10 @@
     cursor: pointer;
     transition: opacity 0.2s ease-out;
 
+    &--modal {
+      width: 100%;
+    }
+
     &:hover {
       opacity: 0.8;
     }
@@ -204,6 +208,17 @@
   border-block-end: 1px solid hsl(var(--rose-100));
   padding-block: var(--md);
 
+  &__thumbnail {
+    width: 47px;
+    height: 47px;
+    border-radius: var(--xxs);
+
+    &-wrapper {
+      display: flex;
+      gap: var(--md);
+    }
+  }
+
   &__details {
     display: flex;
     flex-direction: column;
@@ -214,6 +229,10 @@
     color: hsl(var(--rose-900));
     font-size: 0.85rem;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    inline-size: 150px;
   }
 
   &__stats {
@@ -243,6 +262,11 @@
     font-weight: 600;
     font-size: 0.85rem;
     padding-inline-end: var(--md);
+
+    &--thumbnail {
+      font-size: 1rem;
+      color: hsl(var(--rose-900));
+    }
   }
 
   &__remove-button {
@@ -266,8 +290,65 @@
   inset-block-start: auto;
   margin: 0;
   border: none;
-  border-radius: var(--sm);
+  border-start-start-radius: var(--sm);
+  border-start-end-radius: var(--sm);
   padding: var(--xl);
-  padding-block: 2.5rem;
-  background-color: black;
+  padding-block: 3.7rem;
+  background-color: hsl(var(--rose-50));
+  overscroll-behavior: contain;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-block-end: var(--max);
+  }
+
+  &__image {
+    margin-block-end: var(--lg);
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-block-end: var(--xs);
+    color: hsl(var(--rose-900));
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: hsl(var(--rose-500));
+  }
+
+  &__order {
+    background-color: hsl(var(--rose-50));
+    border-radius: var(--sm);
+    padding-block: var(--xs);
+    padding-inline: 1.6rem;
+    padding-inline-end: var(--xs);
+    margin-block-end: var(--xl);
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--xl);
+    padding-inline-end: var(--md);
+
+    &-text {
+      font-size: 0.9rem;
+      color: hsl(var(--rose-900));
+    }
+
+    &-price {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: hsl(var(--rose-900));
+    }
+  }
+
+  &::backdrop {
+    background-color: hsla(0, 0%, 0%, 0.6);
+  }
 }
