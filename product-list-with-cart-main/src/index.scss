@@ -53,6 +53,7 @@ html {
 body {
   padding: var(--xl);
   background-color: hsl(var(--rose-50));
+  position: relative;
 
   @media (width >= 70rem) {
     padding-inline: 7rem;

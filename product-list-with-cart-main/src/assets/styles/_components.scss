@@ -12,8 +12,12 @@
 }
 
 .main-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xxl);
+
   @media (width >= 55rem) {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     gap: var(--max);
   }
@@ -49,6 +53,14 @@
     overflow: hidden;
     width: 161px;
     font-size: 0.9rem;
+    transition:
+      border 0.2s ease-out,
+      color 0.2s ease-out;
+
+    &:hover {
+      border-color: hsl(var(--red));
+      color: hsl(var(--red));
+    }
 
     &.active {
       background-color: hsl(var(--red));
@@ -86,6 +98,15 @@
     aspect-ratio: 1 / 1;
     height: 44px;
     width: 44px;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: hsl(var(--red));
+
+      svg {
+        background-color: hsl(var(--white));
+      }
+    }
   }
 
   &__icon {
@@ -94,6 +115,7 @@
     height: 18px;
     width: 18px;
     padding: 2px;
+    transition: background-color 0.2s ease-out;
   }
 
   &__img {
@@ -109,7 +131,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--xxs);
-    margin-block-end: 1.65rem;
+    margin-block-end: 0.45rem;
 
     @media (width >= 70rem) {
       margin-block-end: 0.8rem;
@@ -124,6 +146,7 @@
   &__name {
     font-weight: 600;
     color: hsl(var(--rose-900));
+    line-height: 1.4;
   }
 
   &__price {
@@ -216,14 +239,14 @@
     border-radius: 999px;
     font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.2s ease-out;
+    transition: filter 0.1s ease-out;
 
     &--modal {
       width: 100%;
     }
 
     &:hover {
-      opacity: 0.8;
+      filter: brightness(0.8);
     }
   }
 
@@ -264,6 +287,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     inline-size: 150px;
+
+    @media (width >= 70rem) {
+      inline-size: 300px;
+    }
   }
 
   &__stats {
@@ -309,7 +336,16 @@
     height: 16px;
     border-radius: 50%;
     border: 2px solid hsl(var(--rose-300));
+    color: hsl(var(--rose-300));
     cursor: pointer;
+    transition:
+      color 0.2s ease-out,
+      border 0.2s ease-out;
+
+    &:hover {
+      color: hsl(var(--rose-900));
+      border: 2px solid hsl(var(--rose-900));
+    }
   }
 }
 
@@ -381,5 +417,20 @@
 
   &::backdrop {
     background-color: hsla(0, 0%, 0%, 0.6);
+  }
+
+  @media (width >= 70rem) {
+    inset: 0;
+    inline-size: 41%;
+    max-inline-size: 50rem;
+    block-size: max-content;
+    margin: auto;
+    padding: 2.5rem;
+    padding-block: 3rem;
+    border-radius: var(--md);
+
+    &__image {
+      margin-block-start: calc(-1 * var(--md));
+    }
   }
 }

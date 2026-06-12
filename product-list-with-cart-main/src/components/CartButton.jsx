@@ -13,9 +13,9 @@ function CartButton({ product }) {
 
   useEffect(() => {
     if (buttonRef.current) {
-      const img = buttonRef.current.previousElementSibling;
+      const img = buttonRef.current.previousElementSibling.lastElementChild;
 
-      if (quantity !== 0 || undefined) {
+      if (quantity !== 0) {
         img.classList.add("active");
       } else if (quantity === 1) {
         setItems((prev) => {
@@ -105,7 +105,7 @@ function CartButton({ product }) {
               viewBox="0 0 10 2"
               className="product-card__icon"
             >
-              <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
+              <path fill="currentColor" d="M0 .375h10v1.25H0V.375Z" />
             </svg>
           </button>
 
@@ -121,12 +121,13 @@ function CartButton({ product }) {
               xmlns="http://www.w3.org/2000/svg"
               width="10"
               height="10"
-              fill="none"
+              fill="currentColor"
               viewBox="0 0 10 10"
               className="product-card__icon"
             >
               <path
-                fill="#fff"
+                className="product-card__icon-path"
+                fill="currentColor"
                 d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
               />
             </svg>
