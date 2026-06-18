@@ -73,6 +73,19 @@ html {
 body {
   padding: var(--xl);
   background-color: hsl(var(--rose-50));
+  position: relative;
+}
+@media (width >= 70rem) {
+  body {
+    padding-inline: 7rem;
+    padding-block: 5.5rem;
+  }
+}
+@media (width >= 120rem) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 img {
