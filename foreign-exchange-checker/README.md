@@ -92,6 +92,7 @@ Your users should be able to:
 ### Pre Project Goals
 
 **Thursday 18 June**
+
 I'm going into this project with limited knowledge of **react** and **0** knowledge of **typescript**. This is the first project where I will be writing a proper README and making meaningful commits. By the end of this project I want to as a minimum **improve my knowledge of react and typescript**.
 
 [The Markdown Guide](https://www.markdownguide.org/) to learn more.
