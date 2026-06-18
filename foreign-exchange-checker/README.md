@@ -8,11 +8,11 @@ This is a solution to the [FX Checker challenge on Frontend Mentor](https://www.
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
+- [My Process](#my-process)
+  - [Pre Project Goals](#pre-project-goals)
+  - [The Journey](#the-journey)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
 
@@ -75,10 +75,30 @@ Your users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://github.com/Aprizotic/FrontendMentor/tree/master/foreign-exchange-checker](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
+## My Process
+
+### Pre Project Goals
+
+**Thursday 18 June**
+
+I'm going into this project with limited knowledge of **react** and **0** knowledge of **typescript**. This is the first project where I will be writing a proper README and making meaningful commits. By the end of this project I want to as a minimum **improve my knowledge of react and typescript**.
+
+### The Journey
+
+#### Boilerplate Code
+
+Beginning with:
+
+```bash
+npm create vite@latest
+```
+
+to create the scaffold for the project.
+
+From here I added **CSS variables** for the systems put in place the figma file, and used **SCSS Mixins** for the typography presets.
 
 ### Built with
 
@@ -88,14 +108,8 @@ Your users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-
-### Pre Project Goals
-
-**Thursday 18 June**
-
-I'm going into this project with limited knowledge of **react** and **0** knowledge of **typescript**. This is the first project where I will be writing a proper README and making meaningful commits. By the end of this project I want to as a minimum **improve my knowledge of react and typescript**.
-
-[The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- [Vite](https://vite.dev/)
+- [Sass](https://sass-lang.com/) - CSS Preprocessor
 
 ### Continued development
 
@@ -111,5 +125,6 @@ Describe how you used AI tools (if any) during this project. This helps demonstr
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Aprizotic](https://www.frontendmentor.io/profile/aprizotic)
+
+[The Markdown Guide](https://www.markdownguide.org/) to learn more.
