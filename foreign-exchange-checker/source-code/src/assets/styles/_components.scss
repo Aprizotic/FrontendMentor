@@ -1,0 +1,22 @@
+@use "mixins" as mixin;
+
+.header {
+  padding: var(--spacing-200);
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 107.15px;
+    height: 20px;
+  }
+
+  &__text {
+    @include mixin.text-6;
+    word-spacing: 4px;
+    color: var(--neutral-200);
+  }
+}

@@ -23,9 +23,7 @@ function App() {
             />
           </svg>
 
-          <span className="header__details">
-            55 CURRENCIES · EOD · ECB DATA
-          </span>
+          <span className="header__text">55 CURRENCIES · EOD · ECB DATA</span>
         </div>
         <section className="live-markets"></section>
       </header>
