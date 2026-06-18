@@ -2,19 +2,19 @@
 
 :root {
   /* Colors */
-  --neutral-50: oklch(100%, 0%, 89.876%);
-  --neutral-100: oklch(83%, 0%, 89.876%);
-  --neutral-200: oklch(69.9%, 0%, 89.876%);
-  --neutral-300: oklch(38.7%, 0.75%, 286.243%);
-  --neutral-400: oklch(36%, 0%, 89.876%);
-  --neutral-500: oklch(30.1%, 0%, 89.876%);
-  --neutral-600: oklch(24.4%, 1%, 286.119%);
-  --neutral-700: oklch(20.1%, 1%, 286.04%);
-  --neutral-900: oklch(14.5%, 0%, 89.876%);
-  --lime-500: oklch(92%, 50.5%, 120.07%);
-  --lime-800: oklch(30%, 18.25%, 121.831%);
-  --green-500: oklch(82.2%, 66.75%, 140.605%);
-  --red-500: oklch(66.2%, 56.25%, 25.878%);
+  --neutral-50: oklch(1 0 0);
+  --neutral-100: oklch(0.8294 0 0);
+  --neutral-200: oklch(0.6996 0 0);
+  --neutral-300: oklch(0.3878 0.0023 286.29);
+  --neutral-400: oklch(0.3608 0 0);
+  --neutral-500: oklch(0.3008 0 0);
+  --neutral-600: oklch(0.245 0.0037 286.12);
+  --neutral-700: oklch(0.2011 0.0036 286.07);
+  --neutral-900: oklch(0.1457 0 0);
+  --lime-500: oklch(0.9199 0.2016 119.92);
+  --lime-800: oklch(0.3 0.0727 121.88);
+  --green-500: oklch(0.8214 0.2669 140.59);
+  --red-500: oklch(0.6619 0.2247 25.86);
 
   /* Typography */
   --primary-font: "JetBrains Mono", system-ui, monospace;
