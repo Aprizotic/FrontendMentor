@@ -25,7 +25,13 @@ function App() {
 
           <span className="header__text">55 CURRENCIES · EOD · ECB DATA</span>
         </div>
-        <section className="live-markets"></section>
+
+        <section className="live-markets">
+          <div className="live-markets__heading">
+            <div className="live-markets__heading-point"></div>
+            <span className="live-markets__heading-text">LIVE MARKETS</span>
+          </div>
+        </section>
       </header>
 
       <main className="main">

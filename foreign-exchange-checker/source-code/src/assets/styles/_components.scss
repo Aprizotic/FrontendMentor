@@ -1,9 +1,11 @@
 @use "mixins" as mixin;
 
 .header {
-  padding: var(--spacing-200);
+  display: flex;
+  flex-direction: column;
 
   &__details {
+    padding: var(--spacing-200);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,5 +20,29 @@
     @include mixin.text-6;
     word-spacing: 4px;
     color: var(--neutral-200);
+  }
+}
+
+.live-markets {
+  background-color: white; // Placeholder
+
+  &__heading {
+    @include mixin.text-6;
+    letter-spacing: 0.5px;
+    color: var(--neutral-900);
+    background-color: var(--lime-500);
+    padding-block: var(--spacing-150);
+    padding-inline: var(--spacing-100);
+    inline-size: fit-content;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-100);
+
+    &-point {
+      background-color: var(--neutral-900);
+      border-radius: var(--radius-full);
+      width: 6px;
+      height: 6px;
+    }
   }
 }
