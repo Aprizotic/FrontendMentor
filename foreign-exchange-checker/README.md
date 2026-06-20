@@ -100,6 +100,12 @@ to create the scaffold for the project.
 
 From here I added **CSS variables** for the systems put in place the figma file, and used **SCSS Mixins** for the typography presets.
 
+#### The First Few Questions
+
+![](./design-files/Project%20Screenshots/1.png)
+
+At this stage I'm not sure how I will add the live market section and how to use the `<select>` tag.
+
 ### Built with
 
 - Semantic HTML5 markup
