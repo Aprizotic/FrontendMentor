@@ -18,7 +18,6 @@
 
   &__text {
     @include mixin.text-6;
-    word-spacing: 4px;
     color: var(--neutral-200);
   }
 }
@@ -28,7 +27,6 @@
 
   &__heading {
     @include mixin.text-6;
-    letter-spacing: 0.5px;
     color: var(--neutral-900);
     background-color: var(--lime-500);
     padding-block: var(--spacing-150);
@@ -44,5 +42,55 @@
       width: 6px;
       height: 6px;
     }
+  }
+}
+
+.main {
+  padding-block: var(--spacing-400);
+  padding-inline: var(--spacing-200);
+}
+
+.converter {
+  &__heading {
+    @include mixin.text-2;
+    color: var(--neutral-50);
+    margin-block-end: var(--spacing-200);
+  }
+
+  &__main {
+    background-color: var(--neutral-700);
+    border-radius: var(--radius-20);
+    padding: var(--spacing-200);
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    padding: var(--spacing-200);
+    border: 1px solid var(--neutral-500);
+    background-color: var(--neutral-600);
+    border-radius: var(--radius-16);
+  }
+
+  &__subheading {
+    @include mixin.text-4;
+    color: var(--neutral-100);
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__input {
+    all: unset;
+    @include mixin.text-1-tablet;
+    color: var(--neutral-50);
+    min-width: 0;
+  }
+
+  &__select {
   }
 }

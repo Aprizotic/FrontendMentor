@@ -35,8 +35,51 @@ function App() {
       </header>
 
       <main className="main">
-        <section className="converter"></section>
-        <section className="stats"></section>
+        <h1 className="converter__heading">CHECK THE RATE</h1>
+        <section className="converter">
+          <div className="converter__main">
+            <div className="converter__box">
+              <h2 className="converter__subheading">SEND</h2>
+
+              <div className="converter__options">
+                <input className="converter__input" type="text" value="1,000" />
+                <select className="converter__select"></select>
+              </div>
+            </div>
+
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="m11 6 4-4 4 4m-4-4v16m-6-4-4 4-4-4m4 4V2"
+                />
+              </svg>
+            </button>
+
+            <div className="converter__box">
+              <h2 className="converter__subheading">RECEIVE</h2>
+              <input className="converter__input" type="number" />
+            </div>
+          </div>
+          <div className="converter__footer"></div>
+        </section>
+
+        <section className="stats">
+          <span>{/* Result */}</span>
+          <div>
+            <button>FAVORITE</button>
+            <button>LOG CONVERSION</button>
+          </div>
+        </section>
       </main>
     </>
   );
