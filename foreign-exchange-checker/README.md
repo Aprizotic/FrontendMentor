@@ -100,11 +100,19 @@ to create the scaffold for the project.
 
 From here I added **CSS variables** for the systems put in place the figma file, and used **SCSS Mixins** for the typography presets.
 
+### Mobile View
+
 #### The First Few Questions
 
 ![](./design-files/Project%20Screenshots/1.png)
 
-At this stage I'm not sure how I will add the live market section and how to use the `<select>` tag.
+At this stage I'm not sure how I will add the live market section and how to make the currency picker, since the `<select>` tag has very difficult customisation around it.
+
+At first I found this video on custom select which is not supported :/ [Custom Select](https://www.youtube.com/watch?v=tNBufpGQihY)
+
+After browsing for more solutions I stumbled upon React ARIA: [video](https://www.youtube.com/watch?v=lTPh6NGLAmk), which also introduces more accessible UI elements.
+
+This will be my first time using an external library.
 
 ### Built with
 
