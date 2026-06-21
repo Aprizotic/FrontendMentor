@@ -1,3 +1,13 @@
+import {
+  Button,
+  Label,
+  ListBox,
+  ListBoxItem,
+  Popover,
+  Select,
+  SelectValue,
+} from "react-aria-components/Select";
+
 function App() {
   return (
     <>
@@ -43,7 +53,21 @@ function App() {
 
               <div className="converter__options">
                 <input className="converter__input" type="text" value="1,000" />
-                <select className="converter__select"></select>
+
+                <Select className="select">
+                  <Button className="select__button">
+                    <SelectValue />
+                  </Button>
+
+                  <Popover>
+                    <ListBox>
+                      <ListBoxItem>
+                        <img src="./assets/images/flags/us.webp" alt="" />
+                        USD
+                      </ListBoxItem>
+                    </ListBox>
+                  </Popover>
+                </Select>
               </div>
             </div>
 

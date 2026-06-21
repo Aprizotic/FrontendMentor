@@ -90,7 +90,18 @@
     color: var(--neutral-50);
     min-width: 0;
   }
+}
 
-  &__select {
+.select {
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neutral-500);
+    border: 1px solid var(--neutral-400);
+    color: var(--neutral-50);
+    padding: var(--spacing-125);
+    border-radius: var(--radius-8);
+    @include mixin.text-4;
   }
 }
