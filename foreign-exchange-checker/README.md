@@ -114,6 +114,10 @@ After browsing for more solutions I stumbled upon React ARIA: [video](https://ww
 
 This will be my first time using an external library.
 
+![](./design-files/Project%20Screenshots/2.png)
+
+And from here this is my first time building this kind of UI, not sure how to approach it.
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -124,6 +128,7 @@ This will be my first time using an external library.
 - [React](https://reactjs.org/) - JS library
 - [Vite](https://vite.dev/)
 - [Sass](https://sass-lang.com/) - CSS Preprocessor
+- [React Aria](https://react-aria.adobe.com/)
 
 ### Continued development
 
