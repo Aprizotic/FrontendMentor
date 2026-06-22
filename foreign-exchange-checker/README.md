@@ -116,7 +116,11 @@ This will be my first time using an external library.
 
 ![](./design-files/Project%20Screenshots/2.png)
 
-And from here this is my first time building this kind of UI, not sure how to approach it.
+![](./design-files/Project%20Screenshots/3.png)
+
+This marks the end of my strengths.
+
+I've never made UI such as the segmented control and the graph, I also need to implement data from the API so... back to learning.
 
 ### Built with
 
