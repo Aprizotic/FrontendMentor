@@ -122,6 +122,10 @@ This marks the end of my strengths.
 
 I've never made UI such as the segmented control and the graph, I also need to implement data from the API so... back to learning.
 
+https://www.youtube.com/watch?v=DHvZLI7Db8E
+https://www.youtube.com/watch?v=V_Kr9OSfDeU
+https://www.youtube.com/watch?v=cuEtnrL9-H0
+
 ### Built with
 
 - Semantic HTML5 markup
