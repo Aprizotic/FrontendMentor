@@ -1,0 +1,111 @@
+import {
+  Button,
+  Label,
+  ListBox,
+  ListBoxItem,
+  Popover,
+  Select,
+  SelectValue,
+} from "react-aria-components/Select";
+
+function Main() {
+  return (
+    <main className="main">
+      <h1 className="converter__heading">CHECK THE RATE</h1>
+      <section className="converter">
+        <div className="converter__main">
+          <div className="converter__box">
+            <h2 className="converter__subheading">SEND</h2>
+
+            <div className="converter__options">
+              <input className="converter__input" type="text" value="1,000" />
+
+              <Select className="select">
+                <Button className="select__button">
+                  <SelectValue />
+                </Button>
+
+                <Popover>
+                  <ListBox>
+                    <ListBoxItem>
+                      <img src="./assets/images/flags/us.webp" alt="" />
+                      USD
+                    </ListBoxItem>
+                  </ListBox>
+                </Popover>
+              </Select>
+            </div>
+          </div>
+
+          <button className="converter__switch">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="m11 6 4-4 4 4m-4-4v16m-6-4-4 4-4-4m4 4V2"
+              />
+            </svg>
+          </button>
+
+          <div className="converter__box">
+            <h2 className="converter__subheading">RECEIVE</h2>
+
+            <div className="converter__options">
+              <span className="converter__output">1,000</span>
+
+              <Select className="select select--output">
+                <Button className="select__button">
+                  <SelectValue />
+                </Button>
+
+                <Popover>
+                  <ListBox>
+                    <ListBoxItem>
+                      <img src="./assets/images/flags/us.webp" alt="" />
+                      EUR
+                    </ListBoxItem>
+                  </ListBox>
+                </Popover>
+              </Select>
+            </div>
+          </div>
+        </div>
+
+        <div className="converter__footer">
+          <span className="converter__rate">1 USD = 0.8530 EUR</span>
+
+          <div className="converter__controls">
+            <button className="converter__favorite">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill="currentColor"
+                  d="M7.332 2.41c.281-.562 1.078-.538 1.336 0l1.547 3.118 3.422.492c.61.094.843.844.398 1.29l-2.46 2.413.585 3.399c.094.61-.562 1.078-1.101.797l-3.047-1.617-3.07 1.617c-.54.28-1.196-.188-1.102-.797l.586-3.399L1.965 7.31c-.446-.445-.211-1.195.398-1.289l3.446-.492z"
+                />
+              </svg>
+              FAVORITED
+            </button>
+            <button className="converter__log">LOG CONVERSION</button>
+          </div>
+        </div>
+      </section>
+
+      <section className="stats"></section>
+    </main>
+  );
+}
+
+export default Main;
