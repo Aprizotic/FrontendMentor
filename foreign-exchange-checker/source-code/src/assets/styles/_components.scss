@@ -48,6 +48,13 @@
 .main {
   padding-block: var(--spacing-400);
   padding-inline: var(--spacing-200);
+  inline-size: 100dvi;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-500);
+  }
 }
 
 .converter {
@@ -165,22 +172,85 @@
     padding-inline: var(--spacing-150);
     padding-block: var(--spacing-100);
   }
+
+  &__select {
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--neutral-500);
+      border: 1px solid var(--neutral-400);
+      color: var(--neutral-50);
+      padding: var(--spacing-125);
+      border-radius: var(--radius-8);
+      @include mixin.text-4;
+    }
+
+    &--output {
+      align-self: center;
+    }
+  }
 }
 
-.select {
-  &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--neutral-500);
-    border: 1px solid var(--neutral-400);
-    color: var(--neutral-50);
-    padding: var(--spacing-125);
-    border-radius: var(--radius-8);
-    @include mixin.text-4;
+.stats {
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+
+  &__select {
+    &-button {
+      all: unset;
+      box-sizing: border-box;
+      inline-size: 100%;
+      border-radius: var(--radius-8);
+      padding-inline: var(--spacing-150);
+      padding-block: var(--spacing-100);
+      background-color: var(--neutral-700);
+      border: 1px solid var(--neutral-400);
+      @include mixin.text-3;
+      color: var(--neutral-50);
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
   }
 
-  &--output {
-    align-self: center;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-125);
+  }
+
+  &__card {
+    background-color: var(--neutral-700);
+    border: 1px solid var(--neutral-600);
+    padding-inline: var(--spacing-250);
+    padding-block: var(--spacing-150);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-200);
+    border-radius: var(--radius-16);
+
+    &-heading {
+      @include mixin.text-4;
+      color: var(--neutral-100);
+    }
+
+    &-details {
+      @include mixin.text-2;
+      color: var(--neutral-50);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-100);
+
+      > span {
+        font-size: 14px;
+      }
+
+      &--positive {
+        color: var(--green-500);
+      }
+    }
   }
 }
