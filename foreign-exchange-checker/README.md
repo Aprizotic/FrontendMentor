@@ -122,13 +122,15 @@ This marks the end of my strengths.
 
 I've never made UI such as the segmented control and the graph, I also need to implement data from the API so... back to learning.
 
-I got a very good understanding of how to fetch API's from these 3 videos:
+I got a good understanding of how to fetch API's from these 3 videos:
 
 - [Promises](https://www.youtube.com/watch?v=DHvZLI7Db8E)
 - [Async Await](https://www.youtube.com/watch?v=V_Kr9OSfDeU)
 - [Fetch API](https://www.youtube.com/watch?v=cuEtnrL9-H0)
 
-Putting it in my own words, a promise is an object that holds a future value (like saying I promise to finish this hackathon, I either resolve that promise or not), that is an improvement over using callbacks. Async await is a cleaner syntax of `.this()` and `.catch` and `fetch()` is somethething that returns a promise.
+Putting it in my own words, a promise is an object that holds a future value (like saying I promise to finish this hackathon, I either resolve that promise or not), that is an improvement over using callbacks. Async await is a cleaner syntax of `.this()` and `.catch` and `fetch()` is something that returns a promise.
+
+The next issue would be implementing this with the Frankfurter API, and making it interactive with the UI, in typescript aswell, my head is spinning 😵‍💫.
 
 ### Built with
 
