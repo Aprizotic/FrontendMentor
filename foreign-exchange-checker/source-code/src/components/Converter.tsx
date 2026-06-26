@@ -1,34 +1,33 @@
-import { useState } from "react";
-import {
-  Button,
-  Label,
-  ListBox,
-  ListBoxItem,
-  Popover,
-  Select,
-  SelectValue,
-} from "react-aria-components/Select";
+import { useState, useRef } from "react";
+import CurrencySelector from "./CurrencySelector";
 
 function Converter() {
-  let [input, setInput] = useState(0);
-  let [output, setOutput] = useState(0);
-
-  const getRates = async () => {
-    let response = await fetch("https://api.frankfurter.dev/v2/rates");
-    let rates = await response.json();
-    let target = rates.find(
-      (rate) => rate.base === "EUR" && rate.quote === "USD",
-    );
-
-    return parseFloat(target.rate);
+  type Rate = {
+    base: string;
+    quote: string;
   };
 
-  const convert = (e) => {
-    const value = e.target.value;
+  let [input, setInput] = useState(0);
+  let [output, setOutput] = useState("0");
+  let [curSelectedInp, setCurSelectedInp] = useState("USD");
+  let [curSelectedOut, setCurSelectedOut] = useState("EUR");
+
+  const getRates = async () => {
+    let response = await fetch(
+      `https://api.frankfurter.dev/v2/rate/${curSelectedInp}/${curSelectedOut}`,
+    );
+    console.log(curSelectedInp, curSelectedOut);
+    let pair = await response.json();
+
+    return parseFloat(pair.rate);
+  };
+
+  const convert = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value: number = Number(e.target.value);
     setInput(value);
 
-    getRates().then((rate) => {
-      setOutput((value / rate).toFixed(2));
+    getRates().then((rate: number) => {
+      setOutput((value * rate).toFixed(2));
     });
   };
 
@@ -46,20 +45,7 @@ function Converter() {
               onChange={convert}
             />
 
-            <Select className="converter__select">
-              <Button className="converter__select-button">
-                <SelectValue />
-              </Button>
-
-              <Popover>
-                <ListBox>
-                  <ListBoxItem>
-                    <img src="./assets/images/flags/us.webp" alt="" />
-                    USD
-                  </ListBoxItem>
-                </ListBox>
-              </Popover>
-            </Select>
+            <CurrencySelector changeState={setCurSelectedInp} />
           </div>
         </div>
 
@@ -87,20 +73,7 @@ function Converter() {
           <div className="converter__options">
             <span className="converter__output">{output}</span>
 
-            <Select className="converter__select converter__select--output">
-              <Button className="converter__select-button">
-                <SelectValue />
-              </Button>
-
-              <Popover>
-                <ListBox>
-                  <ListBoxItem>
-                    <img src="./assets/images/flags/us.webp" alt="" />
-                    EUR
-                  </ListBoxItem>
-                </ListBox>
-              </Popover>
-            </Select>
+            <CurrencySelector changeState={setCurSelectedOut} />
           </div>
         </div>
       </div>
