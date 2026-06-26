@@ -134,6 +134,21 @@ The next issue would be implementing this with the Frankfurter API, and making i
 
 Starting off small, lets make the input work with only USD to EUR.
 
+```tsx
+async function getRates() {
+  let response = await fetch("https://api.frankfurter.dev/v2/rates");
+  let rates = await response.json();
+  let target = rates.find(
+    (rate) => rate.base === "EUR" && rate.quote === "USD",
+  );
+  console.log(target.rate);
+}
+
+getRates();
+```
+
+VScode is throwing an error about types for rate, that is for future me to solve, for now I have the exchange rate and I need to apply it to the user input.
+
 ### Built with
 
 - Semantic HTML5 markup
