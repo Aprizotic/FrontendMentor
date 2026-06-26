@@ -132,6 +132,8 @@ Putting it in my own words, a promise is an object that holds a future value (li
 
 The next issue would be implementing this with the Frankfurter API, and making it interactive with the UI, in typescript aswell, my head is spinning 😵‍💫.
 
+Starting off small, lets make the input work with only USD to EUR.
+
 ### Built with
 
 - Semantic HTML5 markup
