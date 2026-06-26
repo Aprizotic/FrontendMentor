@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Button,
   Label,
@@ -9,6 +10,28 @@ import {
 } from "react-aria-components/Select";
 
 function Converter() {
+  let [input, setInput] = useState(0);
+  let [output, setOutput] = useState(0);
+
+  const getRates = async () => {
+    let response = await fetch("https://api.frankfurter.dev/v2/rates");
+    let rates = await response.json();
+    let target = rates.find(
+      (rate) => rate.base === "EUR" && rate.quote === "USD",
+    );
+
+    return parseFloat(target.rate);
+  };
+
+  const convert = (e) => {
+    const value = e.target.value;
+    setInput(value);
+
+    getRates().then((rate) => {
+      setOutput((value / rate).toFixed(2));
+    });
+  };
+
   return (
     <section className="converter">
       <div className="converter__main">
@@ -16,7 +39,12 @@ function Converter() {
           <h2 className="converter__subheading">SEND</h2>
 
           <div className="converter__options">
-            <input className="converter__input" type="text" value="1,000" />
+            <input
+              className="converter__input"
+              type="text"
+              placeholder="0"
+              onChange={convert}
+            />
 
             <Select className="converter__select">
               <Button className="converter__select-button">
@@ -57,7 +85,7 @@ function Converter() {
           <h2 className="converter__subheading">RECEIVE</h2>
 
           <div className="converter__options">
-            <span className="converter__output">1,000</span>
+            <span className="converter__output">{output}</span>
 
             <Select className="converter__select converter__select--output">
               <Button className="converter__select-button">
