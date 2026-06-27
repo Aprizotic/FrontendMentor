@@ -184,6 +184,34 @@
       padding: var(--spacing-125);
       border-radius: var(--radius-8);
       @include mixin.text-4;
+      gap: var(--spacing-075);
+
+      > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-100);
+      }
+    }
+
+    &-popover {
+      background-color: var(--neutral-600);
+      border: 1px solid var(--neutral-400);
+      border-radius: var(--radius-8);
+      padding: var(--spacing-100);
+      right: 0;
+      inline-size: 311px;
+    }
+
+    &-img {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
     }
 
     &--output {
@@ -252,5 +280,22 @@
         color: var(--green-500);
       }
     }
+  }
+}
+
+.search-field {
+  background-color: transparent;
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-6);
+  padding: var(--spacing-150);
+  inline-size: 100%;
+  @include mixin.text-5;
+  color: var(--neutral-200);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-100);
+
+  &__input {
+    all: unset;
   }
 }

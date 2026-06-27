@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { SearchField } from "./SearchField";
 import {
   Button,
   Label,
@@ -10,9 +10,9 @@ import {
   SelectValue,
 } from "react-aria-components/Select";
 
-function CurrencySelector({ changeState }) {
+function CurrencySelector({ currentState, changeState, triggerRef }) {
   let [currencies, setCurrencies] = useState([]);
-  let [currency, setCurrency] = useState("");
+  let [currency, setCurrency] = useState(currentState);
 
   useEffect(() => {
     const getCurrencies = async () => {
@@ -36,14 +36,36 @@ function CurrencySelector({ changeState }) {
     >
       <Button className="converter__select-button">
         <SelectValue />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          fill="none"
+          viewBox="0 0 12 12"
+        >
+          <path
+            fill="#fff"
+            d="M2.988 4.02h6.024c.422 0 .633.515.328.82l-3 3a.48.48 0 0 1-.68 0l-3-3c-.304-.305-.093-.82.328-.82"
+          />
+        </svg>
       </Button>
 
-      <Popover>
+      <Popover
+        className="converter__select-popover"
+        triggerRef={triggerRef}
+        offset={4}
+        isOpen={true}
+      >
+        <SearchField placeholder="Search currencies..." />
         <ListBox>
           {currencies.map((currency) => (
-            <ListBoxItem id={currency.iso_code}>
+            <ListBoxItem
+              id={currency.iso_code}
+              className="converter__select-item"
+            >
               <img
-                src={`./assets/images/flags/${currency.iso_code.slice(0, 2)}.webp`}
+                className="converter__select-img"
+                src={`assets/images/flags/${currency.iso_code.slice(0, 2).toLowerCase()}.webp`}
                 alt=""
               />
               {currency.iso_code}

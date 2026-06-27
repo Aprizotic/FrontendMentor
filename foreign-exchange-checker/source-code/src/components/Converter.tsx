@@ -11,6 +11,7 @@ function Converter() {
   let [output, setOutput] = useState("0");
   let [curSelectedInp, setCurSelectedInp] = useState("USD");
   let [curSelectedOut, setCurSelectedOut] = useState("EUR");
+  let triggerRef = useRef(null);
 
   const getRates = async () => {
     let response = await fetch(
@@ -34,7 +35,7 @@ function Converter() {
   return (
     <section className="converter">
       <div className="converter__main">
-        <div className="converter__box">
+        <div ref={triggerRef} className="converter__box">
           <h2 className="converter__subheading">SEND</h2>
 
           <div className="converter__options">
@@ -45,7 +46,11 @@ function Converter() {
               onChange={convert}
             />
 
-            <CurrencySelector changeState={setCurSelectedInp} />
+            <CurrencySelector
+              currentState={curSelectedInp}
+              changeState={setCurSelectedInp}
+              triggerRef={triggerRef}
+            />
           </div>
         </div>
 
@@ -73,7 +78,10 @@ function Converter() {
           <div className="converter__options">
             <span className="converter__output">{output}</span>
 
-            <CurrencySelector changeState={setCurSelectedOut} />
+            {/* <CurrencySelector
+              currentState={curSelectedOut}
+              changeState={setCurSelectedOut}
+            /> */}
           </div>
         </div>
       </div>
