@@ -78,10 +78,10 @@ function Converter() {
           <div className="converter__options">
             <span className="converter__output">{output}</span>
 
-            {/* <CurrencySelector
+            <CurrencySelector
               currentState={curSelectedOut}
               changeState={setCurSelectedOut}
-            /> */}
+            />
           </div>
         </div>
       </div>

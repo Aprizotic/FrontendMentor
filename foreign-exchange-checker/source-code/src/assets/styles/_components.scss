@@ -192,6 +192,10 @@
         align-items: center;
         gap: var(--spacing-100);
       }
+
+      .converter__select-item-name {
+        display: none;
+      }
     }
 
     &-popover {
@@ -201,6 +205,7 @@
       padding: var(--spacing-100);
       right: 0;
       inline-size: 311px;
+      overflow: scroll;
     }
 
     &-img {
@@ -212,6 +217,32 @@
     &-item {
       display: flex;
       align-items: center;
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-100);
+      @include mixin.text-5;
+      color: var(--neutral-200);
+      border-block-end: 1px solid var(--neutral-500);
+      margin-block: var(--spacing-075);
+    }
+
+    &-item {
+      @include mixin.text-4;
+      color: var(--neutral-50);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-150);
+      padding-inline: var(--spacing-100);
+      padding-block: var(--spacing-150);
+
+      &-name {
+        @include mixin.text-5;
+        color: var(--neutral-200);
+      }
     }
 
     &--output {

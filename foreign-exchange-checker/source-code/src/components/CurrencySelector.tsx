@@ -9,6 +9,7 @@ import {
   Select,
   SelectValue,
 } from "react-aria-components/Select";
+import { Header } from "react-aria-components/ListBox";
 
 function CurrencySelector({ currentState, changeState, triggerRef }) {
   let [currencies, setCurrencies] = useState([]);
@@ -54,23 +55,72 @@ function CurrencySelector({ currentState, changeState, triggerRef }) {
         className="converter__select-popover"
         triggerRef={triggerRef}
         offset={4}
-        isOpen={true}
+        maxHeight={456}
+        shouldFlip={false}
       >
         <SearchField placeholder="Search currencies..." />
         <ListBox>
-          {currencies.map((currency) => (
-            <ListBoxItem
-              id={currency.iso_code}
-              className="converter__select-item"
-            >
-              <img
-                className="converter__select-img"
-                src={`assets/images/flags/${currency.iso_code.slice(0, 2).toLowerCase()}.webp`}
-                alt=""
-              />
-              {currency.iso_code}
-            </ListBoxItem>
-          ))}
+          <Header className="converter__select-header">
+            <span>POPULAR</span> <span>3</span>
+          </Header>
+
+          <ListBoxItem id="USD" className="converter__select-item">
+            <img
+              className="converter__select-img"
+              src={`assets/images/flags/us.webp`}
+              alt=""
+            />
+            <span>USD</span>
+            <span className="converter__select-item-name">US Dollar</span>
+          </ListBoxItem>
+
+          <ListBoxItem id="EUR" className="converter__select-item">
+            <img
+              className="converter__select-img"
+              src={`assets/images/flags/eu.webp`}
+              alt=""
+            />
+            <span>EUR</span>
+            <span className="converter__select-item-name">Euro</span>
+          </ListBoxItem>
+
+          <ListBoxItem id="GDP" className="converter__select-item">
+            <img
+              className="converter__select-img"
+              src={`assets/images/flags/gb.webp`}
+              alt=""
+            />
+            <span>GDP</span>
+            <span className="converter__select-item-name">British Pound</span>
+          </ListBoxItem>
+
+          <Header className="converter__select-header">
+            <span>OTHER CURRENCIES</span> <span>52</span>
+          </Header>
+
+          {currencies
+            .filter(
+              (currency) =>
+                currency.iso_code !== "USD" &&
+                currency.iso_code !== "EUR" &&
+                currency.iso_code !== "GBP",
+            )
+            .map((currency) => (
+              <ListBoxItem
+                id={currency.iso_code}
+                className="converter__select-item"
+              >
+                <img
+                  className="converter__select-img"
+                  src={`assets/images/flags/${currency.iso_code.slice(0, 2).toLowerCase()}.webp`}
+                  alt=""
+                />
+                <span>{currency.iso_code}</span>
+                <span className="converter__select-item-name">
+                  {currency.name}
+                </span>
+              </ListBoxItem>
+            ))}
         </ListBox>
       </Popover>
     </Select>
