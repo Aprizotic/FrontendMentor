@@ -285,6 +285,16 @@ For comparison I'm using googles converter to check results.
 
 Styled the select button, and from that I realised how bad I am at reading documentation, too used to watching youtube videos to explain everything.
 
+Now I made the search work buy filtering use `.include()` and mapping through the filtered values.
+
+```tsx
+const filteredCurrencies = currencies.filter((currency) =>
+  currency.iso_code.toLowerCase().includes(search.toLowerCase()),
+);
+```
+
+and now the converter is broken after everything because the value inside select is an image, string and svg, not just a string like it was before.
+
 ### Built with
 
 - Semantic HTML5 markup

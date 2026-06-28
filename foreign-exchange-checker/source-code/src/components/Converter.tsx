@@ -81,6 +81,7 @@ function Converter() {
             <CurrencySelector
               currentState={curSelectedOut}
               changeState={setCurSelectedOut}
+              triggerRef={triggerRef}
             />
           </div>
         </div>
