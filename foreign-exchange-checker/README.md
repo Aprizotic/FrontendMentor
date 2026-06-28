@@ -281,6 +281,10 @@ It's not typesafe but it works.
 
 For comparison I'm using googles converter to check results.
 
+![](./design-files/Project%20Screenshots/5.png)
+
+Styled the select button, and from that I realised how bad I am at reading documentation, too used to watching youtube videos to explain everything.
+
 ### Built with
 
 - Semantic HTML5 markup
