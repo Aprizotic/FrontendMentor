@@ -293,7 +293,7 @@ const filteredCurrencies = currencies.filter((currency) =>
 );
 ```
 
-and now the converter is broken after everything because the value inside select is an image, string and svg, not just a string like it was before.
+and now the converter is broken because of the fact that I'm rendering something static and dynamic and it just doesn't work. At this point I also realised my approach of styling first before function was a bit of a mistake, I should probably do general layout first, function then style later.
 
 ### Built with
 
